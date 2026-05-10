@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en" dir="ltr" class="no-js">
+<head>
+
+    <!-- OneTrust Cookies Consent Notice start for digilent.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="6a456c81-3504-49b7-b1fc-8674d90ab87b" ></script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for digilent.com --> 
+
+
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/vue.min.js" type="text/javascript"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="always" />
+
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <title>
+        Arty Z7 Reference Manual - Digilent Reference    </title>
+    
+    <script src="https://use.typekit.net/axp2oni.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<!-- NOTE: dokuwiki's php css compressor doesn't play nice with media queries -->
+<link href="https://digilent.com/reference/lib/tpl/digilent-tpl/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://digilent.com/reference/lib/tpl/digilent-tpl/css/print.css" rel="stylesheet" media="print">
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/iconic.min.js" type="text/javascript" ></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/respond.min.js" type="text/javascript"></script>
+
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="rm,doc,arty-z7"/>
+<meta name="description" content="Arty Z7 Reference Manual  The Arty Z7 is a ready-to-use development platform designed around the Zynq-7000™ All Programmable System-on-Chip (AP SoC) from Xilinx. The Zynq-7000 architecture tightly integrates a dual-core, 650 MHz ARM Cortex-A9 processor with Xilinx 7-series Field Programmable Gate Array (FPGA) logic. This pairing grants the ability to surround a powerful processor with a unique set of software defined peripherals and controllers, tailored by you for the target application."/>
+<meta name="author" content="Sam Bobrowicz"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://digilent.com/reference/lib/exe/opensearch.php" title="Digilent Reference"/>
+<link rel="start" href="https://digilent.com/reference/"/>
+<link rel="contents" href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=index" title="Sitemap"/>
+<link rel="manifest" href="https://digilent.com/reference/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://digilent.com/reference/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="https://digilent.com/reference/feed.php?mode=list&amp;ns=programmable-logic:arty-z7"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://digilent.com/reference/_export/xhtml/programmable-logic/arty-z7/reference-manual"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://digilent.com/reference/_export/raw/programmable-logic/arty-z7/reference-manual"/>
+<link rel="canonical" href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual"/>
+<link rel="stylesheet" href="https://digilent.com/reference/lib/exe/css.php?t=digilent-tpl&amp;tseed=76a25c757d51c427bc86f330efa4555b"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='programmable-logic:arty-z7';var JSINFO = {"plugins":{"dropfiles":{"insertFileLink":0},"edittable":{"default columnwidth":""},"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"move_renameokay":false,"plugin":{"semantic":{"exposeWebService":1}},"id":"programmable-logic:arty-z7:reference-manual","namespace":"programmable-logic:arty-z7","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script src="https://digilent.com/reference/lib/exe/jquery.php?tseed=34a552433bc33cc9c3bc32527289a0b2" defer="defer"></script>
+<script src="https://digilent.com/reference/lib/exe/js.php?t=digilent-tpl&amp;tseed=76a25c757d51c427bc86f330efa4555b" defer="defer"></script>
+<script type="text/x-mathjax-config">/*<![CDATA[*/MathJax.Hub.Config({
+
+    tex2jax: {
+
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+
+        processEscapes: true
+
+    }
+
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_CHTML.js"></script>
+<script type="application/ld+json">/*<![CDATA[*/{
+    "@context": "http:\/\/schema.org",
+    "@type": "WebSite",
+    "url": "https:\/\/digilent.com\/reference\/",
+    "name": "Digilent Reference",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https:\/\/digilent.com\/reference\/doku.php?do=search&amp;id={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+/*!]]>*/</script>
+<script type="application/ld+json">/*<![CDATA[*/[
+    {
+        "@context": "http:\/\/schema.org",
+        "@type": "Article",
+        "headline": "Arty Z7 Reference Manual",
+        "name": "Arty Z7 Reference Manual",
+        "datePublished": "2016-10-17T19:43:12+00:00",
+        "dateCreated": "2016-10-17T19:43:12+00:00",
+        "dateModified": "2025-02-20T16:39:39+00:00",
+        "description": "Arty Z7 Reference Manual  The Arty Z7 is a ready-to-use development platform designed around the Zynq-7000\u2122 All Programmable System-on-Chip (AP SoC) from Xilinx. The Zynq-7000 architecture tightly integrates a dual-core, 650 MHz ARM Cortex-A9 processor with Xilinx 7-series Field Programmable Gate Array (FPGA) logic. This pairing grants the ability to surround a powerful processor with a unique set of software defined peripherals and controllers, tailored by you for the target application.",
+        "license": "https:\/\/creativecommons.org\/licenses\/by-nc-sa\/4.0\/deed.en",
+        "url": "https:\/\/digilent.com\/reference\/programmable-logic\/arty-z7\/reference-manual",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/digilent.com\/reference\/programmable-logic\/arty-z7\/reference-manual"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Digilent Reference",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/digilent.com\/reference\/ilent.com\/reference\/lib\/tpl\/digilent-tpl\/images\/logo.png"
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/digilent.com\/reference\/_media\/programmable-logic\/arty-z7\/powercircuit.png",
+            "width": 700,
+            "height": 289
+        },
+        "author": {
+            "@context": "http:\/\/schema.org",
+            "@type": "Person",
+            "name": "Sam Bobrowicz",
+            "email": null
+        },
+        "contributor": [
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Sam Bobrowicz",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Larissa Swanland",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Elod Gyorgy",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Arthur Brown",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "jon peyron",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Vanca Bogdan-Augustin",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "James Colvin",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Ioan",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Keith M Kolmos",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Jeffrey",
+                "email": null
+            },
+            {
+                "@context": "http:\/\/schema.org",
+                "@type": "Person",
+                "name": "Martha",
+                "email": null
+            }
+        ]
+    },
+    {
+        "@context": "http:\/\/schema.org",
+        "@type": "WebPage",
+        "relatedLink": [
+            "https:\/\/digilent.com\/reference\/playground\/ase-release-checklist",
+            "https:\/\/digilent.com\/reference\/programmable-logic\/arty-z7\/reference-manual",
+            "https:\/\/digilent.com\/reference\/programmable-logic\/arty-z7\/start",
+            "https:\/\/digilent.com\/reference\/programmable-logic\/pynq-z1\/reference-manual",
+            "https:\/\/digilent.com\/reference\/programmable-logic\/zybo-z7\/reference-manual"
+        ]
+    }
+]
+/*!]]>*/</script>
+<!--<![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="shortcut icon" href="https://digilent.com/reference/_media/favicon.ico" />
+<link rel="apple-touch-icon" href="https://digilent.com/reference/lib/tpl/digilent-tpl/images/apple-touch-icon.png" />
+    <style>
+        .navbar-brand-img {
+            box-sizing: content-box;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: auto;\n        }
+    </style>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9mGrPMbiRHWifVc","https://zn9mgrpmbirhwifvc-singuser98edbb5b.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9mGrPMbiRHWifVc")).start()}catch(i){}})();
+</script>
+<div id='ZN_9mGrPMbiRHWifVc'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/553b1116bb.js" crossorigin="anonymous"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHG3J9R');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/src/sitewide-banner.js"></script>
+<link href="https://digilent.s3.us-west-2.amazonaws.com/resources/cdn/sitewide-banner/src/sitewide-banner.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target="#dw_toc">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHG3J9R"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+        <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+
+                <div id="dokuwiki__site" >
+	
+	<div id="dokuwiki__top" class="dokuwiki site mode_show ">
+        
+		<!-------------------------------------Start  OF HEADER------------------------------------->	
+	<div class="navbar navbar-default navbar-fixed-top" id="navbar">
+            <div>
+                <ul id="header-tabs">
+                    <li>
+                        <a href="https://digilent.com">Shop</a>
+                    </li>
+                    <li id="wiki-tab">
+                        <a href="https://digilent.com/reference">Reference</a>
+                    </li>
+                </ul>
+                <div id="ni-tag"><img src="/reference/_media/2024-digilent-emersontagline-247x24.png" alt="digilent"></div>
+            </div>
+
+
+            <div class="container">
+                                <div id="header-main">
+                    
+                    <div class="flex-container">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target="#topnav" type="button">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!---------------Search--------------->
+                        <form action="https://digilent.com/reference/start" accept-charset="utf-8" class="navbar-form" id="dw__search" method="get" role="search"><input type="hidden" name="do" value="search" /><i id="search-icon" class="fa fa-search"></i><div class="form-group"><input type="text"  autocomplete="off" id="qsearch__in" accesskey="f" name="id" class="form-control col-lg-3" title="[F]" placeholder="Search" /> </div><div id="qsearch__out" class="ajax_qsearch"></div></form>                        
+                        <!---------------Logo ---------------> 
+                                                    <div id="logo"><a class="navbar-brand-img" href="/reference"><img src="/reference/_media/2024-Digilent-ReferenceHeader-310x64.png" alt=""></a></div>
+                                                
+                        <!---------------Tools ---------------> 
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle toolsdrop" data-toggle="dropdown">
+                                <i id="tools-icon" class="fas fa-tools"></i><span id="tools-text">
+                                Internal Tools</span><b class="caret"></b></a>
+                                <ul id="tools-menu" class="dropdown-menu hortop">
+                                    <li class="dropdown-header">Page Tools</li>
+                                    <li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=edit"  class="action source" accesskey="v" rel="nofollow" title="Show pagesource [V]">Show pagesource</a></li><li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a></li><li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=backlink"  class="action backlink" rel="nofollow" title="Backlinks">Backlinks</a></li>                                    <li class="dropdown-header">Site Tools</li>
+                                                                        <li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li><li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=media&amp;ns=programmable-logic%3Aarty-z7"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=admin"  class="action admin" rel="nofollow" title="Admin">Admin</a></li>                                                                                                            <li class="dropdown-header">User Tools</li>
+                                    <li><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual?do=login&amp;sectok="  class="action login" rel="nofollow" title="Log In">Log In</a></li>                                                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="header-categories">
+                <div class="container">
+                    <div class="container navbar-collapse collapse" id="topnav">				
+                        <!---------------Generate Navbar--------------->					
+                            
+                            <!------------------------------------------------------------------------------------------				
+                            - START WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            <div>
+	<ul class="nav navbar-nav flex-container">
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards and Components<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class ="col-sm-7">
+					<ul>
+						<li class="dropdown-header">FPGA/SoC Development Boards</li>
+						<li><a href="/reference/programmable-logic/arty-a7/start">Arty A7</a></li>
+						<li><a href="/reference/programmable-logic/arty-s7/start">Arty S7</a></li>
+						<li><a href="/reference/programmable-logic/arty-z7/start">Arty Z7</a></li>
+						<li><a href="/reference/programmable-logic/basys-3/start">Basys 3</a></li>
+						<li><a href="/reference/programmable-logic/cmod-a7/start">Cmod A7</a></li>
+						<li><a href="/reference/programmable-logic/cmod-s7/start">Cmod S7</a></li>
+						<li><a href="/reference/programmable-logic/cora-z7/start">Cora Z7</a></li>
+						<li><a href="/reference/programmable-logic/eclypse-z7/start">Eclypse Z7</a></li>
+						<li><a href="/reference/programmable-logic/genesys-2/start">Genesys 2</a></li>
+						<li><a href="/reference/programmable-logic/genesys-zu/start">Genesys ZU</a></li>
+						<li><a href="/reference/programmable-logic/nexys-a7/start">Nexys A7</a></li>
+						<li><a href="/reference/programmable-logic/nexys-video/start">Nexys Video</a></li>
+						<li><a href="/reference/programmable-logic/usb104a7/start">USB104 A7</a></li>
+						<li><a href="/reference/programmable-logic/zedboard/start">Zedboard Zynq-7000 Development Board</a></li>
+						<li><a href="/reference/programmable-logic/zybo-z7/start">Zybo Z7</a></li>						
+						<li><a class="see-all" href="/reference/programmable-logic/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+
+					<ul>
+						<li class="dropdown-header">Programmers</li>
+						<li><a class="see-all" href="/reference/programmers/start">See All</a></li>
+					</ul>
+				</li>
+
+				<li class ="col-sm-5">
+					<ul>
+						<li class="dropdown-header">Expansion Modules</li>
+						<ul>
+							<li class="dropdown-header sub-heading">Zmods</li>
+							<li><a href="/reference/zmod/zmoddac/start">Zmod AWG</a></li>
+							<li><a href="/reference/zmod/digitizer/start">Zmod Digitizer</a></li>
+							<li><a href="/reference/zmod/zmodadc/start">Zmod Scope</a></li>							
+							<li><a href="/reference/zmod/sdr/start">Zmod SDR</a></li>							
+							<li><a class="see-all" href="/reference/zmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header sub-heading">Pmods</li>
+							<li><a class="see-all" href="/reference/pmod/start">See All</a></li>
+							<li class="divider"></li>
+						</ul>
+		
+						<ul>
+							<li class="dropdown-header sub-heading">Pcams</li>
+							<li><a href="/reference/add-ons/fmc-pcam-adapter/start">FMC Pcam Adapter</a></li>
+							<li><a href="/reference/add-ons/pcam-5c/start">Pcam 5C</a></li>
+							<li class="divider"></li>
+						</ul>
+
+						<ul>
+							<li class="dropdown-header">MCU Boards</li>
+							<li><a href="/reference/microprocessor/basys-mx3/start">Basys MX3</a></li>
+							<li><a href="/reference/microprocessor/max32/start">Max32</a></li>
+							<li><a href="/reference/microprocessor/uc32/start">uC32</a></li>
+							<li><a href="/reference/microprocessor/wf32/start">WF32</a></li>
+							<li><a href="/reference/microprocessor/wi-fire/start">Wi-Fire</a></li>
+							<li><a class="see-all" href="/reference/microprocessor/start">See All</a></li>
+						</ul>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Test and Measurement Equipment<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class ="col-sm-7">
+					<ul>
+						<li class="dropdown-header">USB Scopes, Analyzers and Signal Generators</li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-3/start">Analog Discovery 3</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2/start">Analog Discovery 2</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio-max/start">Analog Discovery Studio Max</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/start">Analog Discovery Studio</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-2000-series/start">Analog Discovery Pro 2000 Series</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-3x50/start">Analog Discovery Pro 3000 Series</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-pro-5000-series/start">Analog Discovery Pro 5000 Series</a></li>
+						<li><a href="/reference/test-and-measurement/digital-discovery/start">Digital Discovery</a></li>
+						<li><a href="/reference/test-and-measurement/discovery-power-supply-3340/start">Discovery Power Supply (DPS3340)</a></li>
+						<li><a class="see-all" href="/reference/test-and-measurement/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+
+					<ul>
+						<li class="dropdown-header ">Software</li>
+						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>						
+						<li class="divider"></li>
+					</ul>
+				</li>
+				<li class="col-sm-5">
+					
+					<ul>
+						<li class="dropdown-header">Adapters and Canvases</li>
+						<li><a href="/reference/add-ons/audio-adapter-plus/start">Audio Adapter+</a></li>
+						<li><a href="/reference/test-and-measurement/bnc-adapter-board/start">BNC Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/current-and-power-adapter/start">Current and Power Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-2-breadboard-breakout/start">Breadboard Breakout</a></li>
+						<li><a href="/reference/test-and-measurement/bb-adapter-board/start">Breadboard Adapter</a></li>
+						<li><a href="/reference/add-ons/impedance-analyzer/start">Impedance Analyzer Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/transistor-tester-adapter/start">Transistor Tester Adapter</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio-max/canvases/start">ADS Max Canvases</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/start">ADS Canvases</a></li>
+						<!-- <li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/blank-canvas/start">Blank Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/breadboard-canvas/start">Breadboard Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/digital-trainer-canvas/start">Digital Trainer Canvas</a></li>
+						<li><a href="/reference/test-and-measurement/analog-discovery-studio/canvases/interposer-canvas/start">Interposer Canvas</a></li> -->
+					</ul>
+				 </li>
+				</li>
+			</ul>
+		</li>
+
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">DAQ and Datalogging<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class="col-sm-12">
+					<ul>
+						<li class="dropdown-header">MCCDAQ Documentation</li>
+						<li><a href="/reference/daq-and-datalogging/manuals/start">Manuals</a></li>
+						<li><a href="/reference/daq-and-datalogging/specifications/start">Specifications</a></li>
+						<li><a href="/reference/daq-and-datalogging/documents/start">App Notes and Tech Tips</a></li>
+						<li><a class="see-all" href="/reference/daq-and-datalogging/start">See All</a></li>
+					</ul>
+					<ul>
+						<li class="dropdown-header">DAQ and Data Loggers</li>
+						<li><a href="/reference/daq-and-datalogging/webdaq/webdaq-316/start">WebDAQ 316</a></li>
+						<li><a href="/reference/daq-and-datalogging/webdaq/webdaq-504/start">WebDAQ 504</a></li>
+						<li><a href="/reference/daq-and-datalogging/webdaq/webdaq-904/start">WebDAQ 904</a></li>						
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+
+
+		<li class="dropdown dropdown-lg">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Software<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row two-col hortop">
+				<li class="col-sm-12">
+					<ul>
+						<li class="dropdown-header">Digilent Software</li>
+						<li><a href="/reference/software/adept/start">Adept 2</a></li>
+						<li><a href="/reference/software/waveforms/waveforms-3/start">WaveForms</a></li>
+						<li><a href="/reference/software/waveforms/waveforms-sdk/start">WaveForms SDK</a></li>
+						<li><a href="/reference/software/labview/start">LabVIEW WaveForms Toolkit</a></li>
+						<li><a class="see-all"href="/reference/software/start">See All</a></li>
+						<li class="divider"></li>
+					</ul>
+					<ul>
+						<li class="dropdown-header">MCC Software</li>
+						<li><a href="/reference/software/dasylab/start">DASYLab</a></li>	
+						<li><a href="/reference/software/daqami/start">DAQami</a></li>			
+						<li><a href="/reference/software/instacal/start">InstaCal</a></li>		
+						<li><a href="/reference/software/matlab/start">MATLAB</a></li>		
+						<li><a href="/reference/software/tracerdaq/start">TracerDAQ</a></li>
+						<li><a href="/reference/software/quickdaq/start">QuickDAQ</a></li>								
+						<li><a href="/reference/software/universal-library/start">Universal Library</a></li>
+						<li><a class="see-all"href="/reference/software/start">See All</a></li>	
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="vertical-divider">
+			|
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://digilent.com/blog" target="_blank" rel="noopener">Blog</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a href="https://forum.digilent.com" target="_blank" rel="noopener">Forum</a>
+		</li>
+
+		<li class="dropdown nav-link nav-link-secondary">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Learn<b class="caret"></b></a>
+			<ul class="dropdown-menu dropdown-menu-lg row one-col hortop">
+				<li class="col-sm-12">
+					<ul>						
+						<li><a href="/reference/learn/courses/start">Courses</a></li>
+						<li><a href="https://digilent.com/projects/">Projects</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a id="github-link" href="https://github.com/digilent" target="_blank" rel="noopener" title="Github">
+				<i id="github-icon" class="fa fa-github fa-lg"></i>
+				<span id="github-text">Digilent Github</span>
+			</a>
+		</li>
+
+		<li class="nav-link nav-link-secondary">
+			<a id="ideas-link" href="https://digilent.frill.co/signup" target="_blank" rel="noopener" title="Idea Space">
+				<i id="ideas-icon" class="fa fa-lightbulb-o fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+                            <!------------------------------------------------------------------------------------------				
+                            - END WIKI NAV
+                            ---------------------------------------------	--------------------------------------------->
+                            
+                    </div>
+                </div>
+            </div>	
+
+            <section id="sitewide-banner-slot"></section>
+        </div>
+
+	<!-------------------------------------END OF HEADER------------------------------------->
+        <div class="container not-header">
+            <div class="notifications hidden-print">
+                            </div>
+
+                        
+            				<div class="youarehere">
+					<ul class="breadcrumb hidden-print">You are here::&nbsp; <li class="home"><bdi><a href="https://digilent.com/reference/start" class="wikilink1" title="start" data-wiki-id="start">Digilent Reference</a></bdi></li> <li><bdi><a href="https://digilent.com/reference/programmable-logic/start" class="wikilink1" title="programmable-logic:start" data-wiki-id="programmable-logic:start">FPGA Development Boards</a></bdi></li> <li><bdi><a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7</a></bdi></li> <li><bdi><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual" class="wikilink1" title="programmable-logic:arty-z7:reference-manual" data-wiki-id="programmable-logic:arty-z7:reference-manual">Arty Z7 Reference Manual</a></bdi></li> </ul>				</div>
+			
+            
+            <section class="wrapper row"><!-- PAGE ACTIONS -->
+                <!-- ********** CONTENT ********** -->
+                <div id="dokuwiki__content" class="col-xs-12">
+                    
+                                        
+                    <!-- TOC START -->
+<div id="dw_toc" class="hidden-print panel panel-default pull-right col-sm-4 col-md-3 col-xs-12">
+<div class="panel-heading hidden-print"><h3 class="panel-title" data-toggle="collapse" data-target="#toc_contents">Table of Contents <b class="caret"></b></h3></div>
+<div id="toc_contents" class="hidden-print panel-collapse collapse in"><div class="panel-body">
+<ul class="">
+<li class="level1"><a href="#arty_z7_reference_manual">Arty Z7 Reference Manual</a>
+<ul class="">
+<li class="level2"><a href="#features">Features</a></li>
+<li class="level2"><a href="#purchasing_options">Purchasing Options</a></li>
+<li class="level2"><a href="#differences_from_pynq-z1">Differences from PYNQ-Z1</a></li>
+<li class="level2"><a href="#software_support">Software Support</a></li>
+<li class="level2"><a href="#power_supplies">1 Power Supplies</a>
+<ul class="">
+<li class="level3"><a href="#notesequencing_changes_from_revision_d0">Note: Sequencing Changes from Revision D.0</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#zynq_apsoc_architecture">2 Zynq APSoC Architecture</a></li>
+<li class="level2"><a href="#zynq_configuration">3 Zynq Configuration</a>
+<ul class="">
+<li class="level3"><a href="#microsd_boot_mode">3.1 microSD Boot Mode</a></li>
+<li class="level3"><a href="#quad_spi_boot_mode">3.2 Quad SPI Boot Mode</a></li>
+<li class="level3"><a href="#jtag_boot_mode">3.3 JTAG Boot Mode</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#quad_spi_flash">4 Quad SPI Flash</a></li>
+<li class="level2"><a href="#ddr_memory">5 DDR Memory</a></li>
+<li class="level2"><a href="#usb_uart_bridge_serial_port">6 USB UART Bridge (Serial Port)</a></li>
+<li class="level2"><a href="#microsd_slot">7 microSD Slot</a></li>
+<li class="level2"><a href="#usb_host">8 USB Host</a></li>
+<li class="level2"><a href="#ethernet_phy">9 Ethernet PHY</a></li>
+<li class="level2"><a href="#hdmi">10 HDMI</a>
+<ul class="">
+<li class="level3"><a href="#tmds_signals">10.1 TMDS Signals</a></li>
+<li class="level3"><a href="#auxiliary_signals">10.2 Auxiliary signals</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#clock_sources">11 Clock Sources</a></li>
+<li class="level2"><a href="#basic_io">12 Basic I/O</a>
+<ul class="">
+<li class="level3"><a href="#tri-color_leds">12.1 Tri-Color LEDs</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#mono_audio_output">13 Mono Audio Output</a>
+<ul class="">
+<li class="level3"><a href="#pulse-width_modulation">13.1 Pulse-Width Modulation</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#reset_sources">14 Reset Sources</a>
+<ul class="">
+<li class="level3"><a href="#power-on_reset_signals">14.1 Power-on Reset Signals</a></li>
+<li class="level3"><a href="#program_push_button_switch">14.2 Program Push Button Switch</a></li>
+<li class="level3"><a href="#processor_subsystem_reset">14.3 Processor Subsystem Reset</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#pmod_ports">15 Pmod Ports</a>
+<ul class="">
+<li class="level3"><a href="#high-speed_pmods">15.1 High-Speed Pmods</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#arduinochipkit_shield_connector">16 Arduino/chipKIT Shield Connector</a>
+<ul class="">
+<li class="level3"><a href="#shield_digital_io">16.1 Shield Digital I/O</a></li>
+<li class="level3"><a href="#shield_analog_io">16.2 Shield Analog I/O</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#hardware_errata">Hardware errata</a></li>
+</ul></li>
+</ul>
+</div></div></div>
+<!-- TOC END -->
+                    <div class="page row" role="main">
+                    <!-- wikipage start -->
+                        
+<h1 class="sectionedit1" id="arty_z7_reference_manual">Arty Z7 Reference Manual</h1>
+<div class="level1">
+
+<p>
+The Arty Z7 is a ready-to-use development platform designed around the Zynq-7000™ All Programmable System-on-Chip (AP SoC) from Xilinx. The Zynq-7000 architecture tightly integrates a dual-core, 650 <abbr title="Megahertz (million times per second)">MHz</abbr> ARM Cortex-A9 processor with Xilinx 7-series Field Programmable Gate Array (FPGA) logic. This pairing grants the ability to surround a powerful processor with a unique set of software defined peripherals and controllers, tailored by you for the target application. 
+</p>
+
+<p>
+The Vivado, Petalinux, and SDSoC toolsets each provide an approachable path between defining your custom peripheral set and bringing it&#039;s functionality up to a Linux <abbr title="Operating System">OS</abbr> or bare metal program running on the processor. For those looking for a more traditional digital logic design experience, it is also possible to ignore the ARM processors and program the Zynq&#039;s FPGA like you would any other Xilinx FPGA. Digilent provides a number of materials and resources for the Arty Z7 that will get you up and running with your tool of choice quickly. 
+</p>
+
+<p>
+<div class='image-gallery'>
+	
+	
+	<div class='large-image'>
+		<a id='gallery-large-image-link' href='https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7_-_obl_-_600.png'>
+			<img id='gallery-large-image' src='https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7_-_obl_-_600.png'>
+		</a>
+	</div>
+	
+	
+	<div class='thumbnails'>
+		
+		
+		<img id='thumbnail0' src='https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7_-_obl_-_600.png' onmouseover='thumbnailHover(this)'>
+		
+		<img id='thumbnail1' src='https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7_-_top_-_600.png' onmouseover='thumbnailHover(this)'>
+		
+		<img id='thumbnail2' src='https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7_-_bottom_-_600.png' onmouseover='thumbnailHover(this)'>
+			
+			
+	</div>
+</div>
+</p>
+
+</div>
+
+<h4 id="additional_important_documentation">Additional Important Documentation:</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="https://digilent.com/reference/lib/exe/fetch.php?tok=a2aed5&amp;media=https%3A%2F%2Ffiles.digilent.com%2Fresources%2Fdocuments%2FEMC_DISCLAIMER_DIGILENT_DEVELOPMENT_AND_EVALUATION_KITS.pdf" class="media mediafile mf_pdf" target="_tab " title="https://files.digilent.com/resources/documents/EMC_DISCLAIMER_DIGILENT_DEVELOPMENT_AND_EVALUATION_KITS.pdf" rel="noopener"> EMC Disclaimer, Digilent Development and Evaluation Kits</a></div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h2 class="sectionedit2" id="features">Features</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li"> <strong>ZYNQ Processor</strong></div>
+<ul>
+<li class="level2"><div class="li"> 650MHz dual-core Cortex-A9 processor</div>
+</li>
+<li class="level2"><div class="li"> DDR3 memory controller with 8 DMA channels and 4 High Performance AXI3 Slave ports</div>
+</li>
+<li class="level2"><div class="li"> High-bandwidth peripheral controllers: 1G Ethernet, USB 2.0, SDIO</div>
+</li>
+<li class="level2"><div class="li"> Low-bandwidth peripheral controller: SPI, UART, CAN, I2C</div>
+</li>
+<li class="level2"><div class="li"> Programmable from JTAG, Quad-SPI flash, and microSD card</div>
+</li>
+<li class="level2"><div class="li"> Programmable logic equivalent to Artix-7 FPGA</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Memory</strong></div>
+<ul>
+<li class="level2"><div class="li"> 512MB DDR3 with 16-bit bus @ 525MHz (1050MT/s)</div>
+</li>
+<li class="level2"><div class="li"> 16MB Quad-SPI Flash with factory programmed 48-bit globally unique EUI-48/64™ compatible identifier</div>
+</li>
+<li class="level2"><div class="li"> microSD slot</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Power</strong></div>
+<ul>
+<li class="level2"><div class="li"> Powered from USB or any 7V-15V external power source</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>USB and Ethernet</strong></div>
+<ul>
+<li class="level2"><div class="li"> Gigabit Ethernet PHY</div>
+</li>
+<li class="level2"><div class="li"> USB-JTAG Programming circuitry</div>
+</li>
+<li class="level2"><div class="li"> USB-UART bridge</div>
+</li>
+<li class="level2"><div class="li"> USB OTG PHY (supports host only)</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Audio and Video</strong></div>
+<ul>
+<li class="level2"><div class="li"> HDMI sink port (input)</div>
+</li>
+<li class="level2"><div class="li"> HDMI source port (output)</div>
+</li>
+<li class="level2"><div class="li"> PWM driven mono audio output with 3.5mm jack</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Switches, Push-buttons, and LEDs</strong></div>
+<ul>
+<li class="level2"><div class="li"> 4 push-buttons</div>
+</li>
+<li class="level2"><div class="li"> 2 slide switches</div>
+</li>
+<li class="level2"><div class="li"> 4 LEDs</div>
+</li>
+<li class="level2"><div class="li"> 2 RGB LEDs</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Expansion Connectors</strong></div>
+<ul>
+<li class="level2 node"><div class="li"> Two Pmod ports</div>
+<ul>
+<li class="level3"><div class="li"> 16 Total FPGA I/O</div>
+</li>
+</ul>
+</li>
+<li class="level2 node"><div class="li"> Arduino/chipKIT Shield connector</div>
+<ul>
+<li class="level3"><div class="li"> Up to 49 Total FPGA I/O (see table below)</div>
+</li>
+<li class="level3"><div class="li"> 6 Single-ended 0-3.3V Analog inputs to XADC </div>
+</li>
+<li class="level3"><div class="li"> 4 Differential 0-1.0V Analog inputs to XADC</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h2 class="sectionedit3" id="purchasing_options">Purchasing Options</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 can be purchased with either a Zynq-7010 or Zynq-7020 loaded. These two Arty Z7 product variants are referred to as the Arty Z7-10 and Arty Z7-20, respectively. When Digilent documentation describes functionality that is common to both of these variants, they are referred to collectively as the “Arty Z7”. When describing something that is only common to a specific variant, the variant will be explicitly called out by its name.
+</p>
+
+<p>
+The only difference between the Arty Z7-10 and Arty Z7-20 are the capabilities of the Zynq part and the amount of I/O available on the shield connector. The Zynq processors both have the same capabilities, but the -20 has about a 3 times larger internal FPGA than the -10. The differences between the two variants are summarized below:
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Product Variant          </th><th class="col1 leftalign"> Arty Z7-10         </th><th class="col2 leftalign"> Arty Z7-20         </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0 leftalign"> Zynq Part                </th><td class="col1 leftalign"> XC7Z010-1CLG400C     </td><td class="col2 leftalign"> XC7Z020-1CLG400C     </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> 1 MSPS On-chip <abbr title="Analog-to-Digital Converter">ADC</abbr>       </th><td class="col1 leftalign"> Yes                  </td><td class="col2 leftalign"> Yes                  </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> Look-up Tables (LUTs)    </th><td class="col1 leftalign"> 17,600               </td><td class="col2 leftalign"> 53,200               </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0 leftalign"> Flip-Flops               </th><td class="col1 leftalign"> 35,200               </td><td class="col2 leftalign"> 106,400              </td>
+	</tr>
+	<tr class="row5">
+		<th class="col0 leftalign"> Block <abbr title="Random Access Memory">RAM</abbr>                </th><td class="col1 leftalign"> 270 KB               </td><td class="col2 leftalign"> 630 KB               </td>
+	</tr>
+	<tr class="row6">
+		<th class="col0 leftalign"> Clock Management Tiles   </th><td class="col1 leftalign"> 2                    </td><td class="col2 leftalign"> 4                    </td>
+	</tr>
+	<tr class="row7">
+		<th class="col0 leftalign"> Available Shield I/O     </th><td class="col1 leftalign"> 26                   </td><td class="col2 leftalign"> 49                   </td>
+	</tr>
+</table></div>
+
+<p>
+On the Arty Z7-10, the inner row of the digital shield (IO26-IO41) and IOA (also referred to as IO42) are not connected to the FPGA, and A0-A5 can only be used as analog inputs. This will not affect the functionality of most existing Arduino shields, because most do not use this inner row of digital signals.
+</p>
+
+<p>
+The board can be purchased stand-alone or with a voucher to unlock the Xilinx SDSoC toolset. The SDSoC voucher unlocks a 1 year license and can only be used with the Arty Z7. After the license expires, any version of SDSoC that was released during this 1 year period can continue to be used indefinitely. For more information on purchasing, see the <a href="https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/" class="urlextern" target="_tab" title="https://digilent.com/shop/arty-z7-zynq-7000-soc-development-board/" rel="ugc nofollow noopener">Arty Z7 Product Page</a>. At the time of purchase, it is also possible to add-on a microSD card, 12V 3A power supply, and micro USB cable as needed. 
+</p>
+
+<p>
+Note that due to the smaller FPGA in the Zynq-7010, it is not very well suited to be used in SDSoC for embedded vision applications. We recommend people purchase the Arty Z7-20 if they are interested in these types of applications.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit5" id="differences_from_pynq-z1">Differences from PYNQ-Z1</h2>
+<div class="level2">
+
+<p>
+Arty Z7-20 shares the exact same SoC with the PYNQ-Z1. Feature-wise, Arty Z7-20 is missing the microphone input, but adds a Power-on Reset button. Software written for PYNQ-Z1 should run unchanged with the exception of microphone input, whose FPGA pin is left unconnected.
+</p>
+
+</div>
+
+<h2 class="sectionedit6" id="software_support">Software Support</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 is fully compatible with Xilinx’s high-performance Vivado Design Suite. This toolset melds FPGA logic design and embedded ARM software development into an easy to use, intuitive design flow. It can be used for designing systems of any complexity, from a complete operating system running multiple server applications in tandem, down to a simple bare-metal program that controls some LEDs. It is also possible to treat the Zynq AP SoC as a standalone FPGA for those not interested in using the processor in their design. As of Vivado release 2015.4, the Logic Analyzer and High-level Synthesis features of Vivado are free to use for all WebPACK targets, which includes the Arty Z7. The Logic Analyzer assists with debugging logic, and the HLS tool allows you to compile C code directly into HDL. 
+</p>
+
+<p>
+Zynq platforms are well-suited to be embedded Linux targets, and Arty Z7 is no exception. To help you get started, Digilent provides a Petalinux project that will get you up and running with a Linux system quickly. For more information, see the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a>.
+</p>
+
+<p>
+The Arty Z7 can also be used in Xilinx&#039;s SDSoC environment, which allows you to design FPGA accelerated programs and video pipelines with ease in an entirely C/C++ environment. For more information on SDSoC, see the <a href="https://www.xilinx.com/products/design-tools/software-zone/sdsoc.html" class="urlextern" target="_tab" title="https://www.xilinx.com/products/design-tools/software-zone/sdsoc.html" rel="ugc nofollow noopener">Xilinx SDSoC Site</a>. Digilent will be releasing a Video capable platform with Linux support in time for the SDSoC 2017.1 release. Note that due to the smaller FPGA in the Arty Z7-10, only very basic video processing demos are included with that platform. Digilent recommends the Arty Z7-20 for those interested in video processing.
+</p>
+
+<p>
+Those familiar with the older Xilinx ISE/EDK toolsets from before Vivado was released can also choose to use the Arty Z7 in that toolset. Digilent does not have many materials to support this, but you can always ask for help on the <a href="https://forum.digilent.com" class="urlextern" target="_tab" title="https://forum.digilent.com" rel="ugc nofollow noopener">Digilent Forum</a>.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit7" id="power_supplies">1 Power Supplies</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 can be powered from the Digilent USB-JTAG-UART port (J14) or from some other type of power source such as a battery or external power supply. Jumper JP5 (near the power switch) determines which power source is used.
+</p>
+
+<p>
+A USB 2.0 port can deliver maximum 0.5A of current according to the specifications. This should provide enough power for lower complexity designs. More demanding applications, including any that drive multiple peripheral boards or other USB devices, might require more power than the USB port can provide. In this case, power consumption will increase until it is limited by the USB host. This limit varies a lot between manufacturers of host computers and depends on many factors. When in current limit, once the voltage rails dip below their nominal value, the Zynq is reset by the Power-on Reset signal and power consumption returns to its idle value. Also, some applications may need to run without being connected to a PC’s USB port. In these instances an external power supply or battery can be used.
+</p>
+
+<p>
+An external power supply (e.g. wall wart) can be used by plugging it into the power jack (J18) and setting jumper JP5 to “REG”. The supply must use a coax, center-positive 2.1mm internal-diameter plug, and deliver 7VDC to 15VDC. Suitable supplies can be purchased from the Digilent website or through catalog vendors like DigiKey. Power supply voltages above 15VDC might cause permanent damage. A suitable external power supply is included with the Arty Z7 accessory kit.
+</p>
+
+<p>
+Similar to using an external power supply, a battery can be used to power the Arty Z7 by attaching it to the shield connector and setting jumper JP5 to “REG”. The positive terminal of the battery must be connected to the pin labeled “VIN” on J7, and the negative terminal must be connected to the pin labeled <abbr title="Ground">GND</abbr> on J7.
+</p>
+
+<p>
+The on-board Texas Instruments TPS65400 PMU creates the required 3.3V, 1.8V, 1.5V, and 1.0V supplies from the main power input. Table 1.1 provides additional information (typical currents depend strongly on Zynq configuration and the values provided are typical of medium size/speed designs).
+</p>
+
+<p>
+The Arty Z7 does not have a power switch, so when a power source is connected and selected with JP5 it will always be powered on. To reset the Zynq without disconnecting and reconnecting the power supply, the red SRST button can be used. The power indicator <abbr title="Light Emitting Diode">LED</abbr> (LD13) is on when all the supply rails reach their nominal voltage. A proper power cycle requires the selected power source (USB, external power supply or battery) to be disconnected from the Arty Z7 and kept disconnected for at least 1 second.
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> <strong>Supply</strong>  </td><td class="col1 leftalign"> <strong>Circuits</strong>                                                 </td><td class="col2 leftalign"> <strong>Current (max/typical)</strong>  </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> 3.3V        </td><td class="col1 leftalign"> FPGA I/O, USB ports, Clocks, Ethernet, SD slot, Flash, HDMI  </td><td class="col2 leftalign"> 1.6A/0.1A to 1.5A          </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 1.0V        </td><td class="col1 leftalign"> FPGA, Ethernet Core                                          </td><td class="col2 leftalign"> 2.6A/0.2A to 2.1A          </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 1.5V        </td><td class="col1 leftalign"> DDR3                                                         </td><td class="col2 leftalign"> 1.8A/0.1A to 1.2A          </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 1.8V        </td><td class="col1 leftalign"> FPGA Auxiliary, Ethernet I/O, USB Controller                 </td><td class="col2 leftalign"> 1.8A/0.1A to 0.6A          </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 1.1. Arty Z7 power supplies.</em>
+</p>
+<hr />
+<hr />
+
+</div>
+
+<h3 class="sectionedit9" id="notesequencing_changes_from_revision_d0">Note: Sequencing Changes from Revision D.0</h3>
+<div class="level3">
+
+<p>
+The power supply circuitry is slightly different depending on the revision of your board. Changes were introduced in Revision D.0 to conform to sequencing requirements imposed by changing the PHY part used from the RTL8211E to the RTL28211F Ethernet PHY. Of particular note is the addition of a load switch separating all I/O circuitry connected to Zynq bank 501 (Ethernet, USB, UART, SD) from the main 1.8 V board supply. These changes mean that board power-on now takes more time. The dropdown below contains the power circuit overview diagram for revisions prior to D.0:
+</p>
+<dl class="outliner outliner-nopopup"><dt>Power Circuit Overview - Revision &lt; D.0 </dt><dd>
+<a href="https://digilent.com/reference/_detail/programmable-logic/arty-z7/powercircuit.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="programmable-logic:arty-z7:powercircuit.png" rel="noopener"><img src="https://digilent.com/reference/_media/programmable-logic/arty-z7/powercircuit.png?w=600&amp;tok=a82cd8" class="media" loading="lazy" alt="" width="600" /></a></dd></dl>
+<hr />
+
+</div>
+
+<h2 class="sectionedit10" id="zynq_apsoc_architecture">2 Zynq APSoC Architecture</h2>
+<div class="level2">
+
+<p>
+ The Zynq APSoC is divided into two distinct subsystems: The Processing System (PS) and the Programmable Logic (PL). Figure 2.1 shows an overview of the Zynq APSoC architecture, with the PS colored light green and the PL in yellow. Note that the PCIe Gen2 controller and Multi-gigabit transceivers are not available on the Zynq-7020 or Zynq-7010 devices. 
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/zybo/zyng1.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="zybo:zyng1.png" rel="noopener"><img src="https://digilent.com/reference/_media/zybo/zyng1.png?w=500&amp;tok=b1e3f5" class="mediacenter" loading="lazy" alt="" width="500" /></a>
+</p>
+
+<p>
+<em>Figure 2.1 Zynq APSoC architecture</em>
+</p>
+
+<p>
+The PL is nearly identical to a Xilinx 7-series Artix FPGA, except that it contains several dedicated ports and buses that tightly couple it to the PS. The PL also does not contain the same configuration hardware as a typical 7-series FPGA, and it must be configured either directly by the processor or via the JTAG port.
+</p>
+
+<p>
+The PS consists of many components, including the Application Processing Unit (APU, which includes 2 Cortex-A9 processors), Advanced Microcontroller Bus Architecture (AMBA) Interconnect, DDR3 Memory controller, and various peripheral controllers with their inputs and outputs multiplexed to 54 dedicated pins (called Multiplexed I/O, or MIO pins). Peripheral controllers that do not have their inputs and outputs connected to MIO pins can instead route their I/O through the PL, via the Extended-MIO (EMIO) interface. The peripheral controllers are connected to the processors as slaves via the AMBA interconnect, and contain readable/writable control registers that are addressable in the processors’ memory space. The programmable logic is also connected to the interconnect as a slave, and designs can implement multiple cores in the FPGA fabric that each also contain addressable control registers. Furthermore, cores implemented in the PL can trigger interrupts to the processors (connections not shown in Fig. 3) and perform DMA accesses to DDR3 memory.
+</p>
+
+<p>
+There are many aspects of the Zynq APSoC architecture that are beyond the scope of this document. For a complete and thorough description, refer to the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference Manual</a>. 
+</p>
+
+<p>
+Table 2.1 depicts the external components connected to the MIO pins of the Arty Z7. The Zynq Presets File found on the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a> can be imported into EDK and Vivado Designs to properly configure the PS to work with these peripherals. 
+</p>
+<div class="table sectionedit11"><table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  <strong>MIO 500 3.3 V</strong>  </td><td class="col1 centeralign" colspan="5">  <strong>Peripherals</strong>                                                                </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> Pin                 </td><td class="col1 leftalign"> ENET 0              </td><td class="col2 leftalign"> SPI Flash  </td><td class="col3 leftalign"> USB 0             </td><td class="col4 leftalign"> Shield        </td><td class="col5 leftalign"> UART 0       </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 0 (N/C)             </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 1                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> <abbr title="Chip Select (Active High)">CS</abbr>         </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 2                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> DQ0        </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> 3                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> DQ1        </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> 4                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> DQ2        </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> 5                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> DQ3        </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> 6                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> <abbr title="SPI Clock">SCLK</abbr>       </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"> 7 (N/C)             </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"> 8                   </td><td class="col1 leftalign">                     </td><td class="col2 leftalign"> SLCK FB    </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"> 9                   </td><td class="col1 leftalign"> Ethernet Reset      </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> 10                  </td><td class="col1 leftalign"> Ethernet Interrupt  </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign"> 11                  </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign"> USB Over Current  </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign"> 12                  </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign"> Shield Reset  </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 leftalign"> 13 (N/C)            </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign">              </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 leftalign"> 14                  </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign"> UART Input   </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign"> 15                  </td><td class="col1 leftalign">                     </td><td class="col2 leftalign">            </td><td class="col3 leftalign">                   </td><td class="col4 leftalign">               </td><td class="col5 leftalign"> UART Output  </td>
+	</tr>
+</table></div>
+<div class="table sectionedit12"><table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  <strong>MIO 501 1.8V</strong>  </td><td class="col1 centeralign" colspan="3">  <strong>Peripherals</strong>                     </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  Pin               </td><td class="col1 centeralign">  ENET 0           </td><td class="col2 centeralign">  USB 0  </td><td class="col3 centeralign">  SDIO 0  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 16                 </td><td class="col1 leftalign"> TXCK              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 17                 </td><td class="col1 leftalign"> TXD0              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 18                 </td><td class="col1 leftalign"> TXD1              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> 19                 </td><td class="col1 leftalign"> TXD2              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> 20                 </td><td class="col1 leftalign"> TXD3              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> 21                 </td><td class="col1 leftalign"> TXCTL             </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> 22                 </td><td class="col1 leftalign"> RXCK              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"> 23                 </td><td class="col1 leftalign"> RXD0              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"> 24                 </td><td class="col1 leftalign"> RXD1              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"> 25                 </td><td class="col1 leftalign"> RXD2              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> 26                 </td><td class="col1 leftalign"> RXD3              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign"> 27                 </td><td class="col1 leftalign"> RXCTL             </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign"> 28                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA4   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 leftalign"> 29                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DIR     </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 leftalign"> 30                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> STP     </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign"> 31                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> NXT     </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0 leftalign"> 32                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA0   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0 leftalign"> 33                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA1   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0 leftalign"> 34                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA2   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0 leftalign"> 35                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA3   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0 leftalign"> 36                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> CLK     </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0 leftalign"> 37                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA5   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0 leftalign"> 38                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA6   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0 leftalign"> 39                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> DATA7   </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0 leftalign"> 40                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> CCLK     </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0 leftalign"> 41                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> CMD      </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0 leftalign"> 42                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> D0       </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0 leftalign"> 43                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> D1       </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0 leftalign"> 44                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> D2       </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0 leftalign"> 45                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> D3       </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0 leftalign"> 46                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign"> RESETN  </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row33">
+		<td class="col0 leftalign"> 47                 </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign"> CD       </td>
+	</tr>
+	<tr class="row34">
+		<td class="col0 leftalign"> 48 (N/C)           </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row35">
+		<td class="col0 leftalign"> 49 (N/C)           </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row36">
+		<td class="col0 leftalign"> 50 (N/C)           </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row37">
+		<td class="col0 leftalign"> 51 (N/C)           </td><td class="col1 leftalign">                   </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row38">
+		<td class="col0 leftalign"> 52                 </td><td class="col1 leftalign"> MDC               </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+	<tr class="row39">
+		<td class="col0 leftalign"> 53                 </td><td class="col1 leftalign"> MDIO              </td><td class="col2 leftalign">         </td><td class="col3 leftalign">          </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 2.1. MIO Pinout</em>
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit13" id="zynq_configuration">3 Zynq Configuration</h2>
+<div class="level2">
+
+<p>
+Unlike Xilinx FPGA devices, APSoC devices such as the Zynq-7020 are designed around the processor, which acts as a master to the programmable logic fabric and all other on-chip peripherals in the processing system. This causes the Zynq boot process to be more similar to that of a microcontroller than an FPGA. This process involves the processor loading and executing a Zynq Boot Image, which includes a First Stage Bootloader (FSBL), a bitstream for configuring the programmable logic (optional), and a user application. 
+The boot process is broken into three stages:
+</p>
+
+<p>
+<strong>Stage 0</strong>
+</p>
+
+<p>
+After the Arty Z7 is powered on or the Zynq is reset (in software or by pressing SRST), one of the processors (CPU0) begins executing an internal piece of read-only code called the BootROM. If and only if the Zynq was just powered on, the BootROM will first latch the state of the mode pins into the mode register (the mode pins are attached to JP4 on the Arty Z7). If the BootROM is being executed due to a reset event, then the mode pins are not latched, and the previous state of the mode register is used. This means that the Arty Z7 needs a power cycle to register any change in the programming mode jumper (JP4). Next, the BootROM copies an FSBL from the form of non-volatile memory specified by the mode register to the 256 KB of internal <abbr title="Random Access Memory">RAM</abbr> within the APU (called On-Chip Memory, or OCM). The FSBL must be wrapped up in a Zynq Boot Image in order for the BootROM to properly copy it. The last thing the BootROM does is hand off execution to the FSBL in OCM.
+</p>
+
+<p>
+<strong>Stage 1</strong>
+</p>
+
+<p>
+During this stage, the FSBL first finishes configuring the PS components, such as the DDR memory controller. Then, if a bitstream is present in the Zynq Boot Image, it is read and used to configure the PL. Finally, the user application is loaded into memory from the Zynq Boot Image, and execution is handed off to it.
+</p>
+
+<p>
+<strong>Stage 2</strong>
+</p>
+
+<p>
+The last stage is the execution of the user application that was loaded by the FSBL. This can be any sort of program, from a simple “Hello World” design, to a Second Stage Boot loader used to boot an operating system like Linux. For a more thorough explanation of the boot process, refer to Chapter 6 of the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>.
+</p>
+
+<p>
+The Zynq Boot Image is created using Vivado and Xilinx Software Development Kit (Xilinx SDK). For information on creating this image please refer to the available Xilinx documentation for these tools.
+</p>
+
+<p>
+The Arty Z7 supports three different boot modes: microSD, Quad SPI Flash, and JTAG. The boot mode is selected using the Mode jumper (JP4), which affects the state of the Zynq configuration pins after power-on. Figure 3.1 depicts how the Zynq configuration pins are connected on the Arty Z7.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-config.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-config.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-config.png?w=600&amp;tok=b966b2" class="mediacenter" loading="lazy" alt="" width="600" /></a>
+</p>
+
+<p>
+<em>Figure 3.1. Arty Z7 configuration pins.</em>
+</p>
+
+<p>
+The three boot modes are described in the following sections.
+</p>
+
+</div>
+
+<h3 class="sectionedit14" id="microsd_boot_mode">3.1 microSD Boot Mode</h3>
+<div class="level3">
+
+<p>
+The Arty Z7 supports booting from a microSD card inserted into connector J9. The following procedure will allow you to boot the Zynq from microSD with a standard Zynq Boot Image created with the Xilinx tools:
+</p>
+<ol>
+<li class="level1"><div class="li"> Format the microSD card with a FAT32 file system.</div>
+</li>
+<li class="level1"><div class="li"> Copy the Zynq Boot Image created with Xilinx SDK to the microSD card.</div>
+</li>
+<li class="level1"><div class="li"> Rename the Zynq Boot Image on the microSD card to BOOT.bin.</div>
+</li>
+<li class="level1"><div class="li"> Eject the microSD card from your computer and insert it into connector J9 on the Arty Z7.</div>
+</li>
+<li class="level1"><div class="li"> Attach a power source to the Arty Z7 and select it using JP5.</div>
+</li>
+<li class="level1"><div class="li"> Place a single jumper on JP4, shorting the two top pins (labeled “SD”).</div>
+</li>
+<li class="level1"><div class="li"> Turn the board on. The board will now boot the image on the microSD card.</div>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit15" id="quad_spi_boot_mode">3.2 Quad SPI Boot Mode</h3>
+<div class="level3">
+
+<p>
+The Arty Z7 has an onboard 16MB Quad-SPI Flash that the Zynq can boot from. Documentation available from Xilinx describes how to use Xilinx SDK to program a Zynq Boot Image into a Flash device attached to the Zynq. Once the Quad SPI Flash has been loaded with a Zynq Boot Image, the following steps can be followed to boot from it:
+</p>
+<ol>
+<li class="level1"><div class="li"> Attach a power source to the Arty Z7 and select it using JP5.</div>
+</li>
+<li class="level1"><div class="li"> Place a single jumper on JP4, shorting the two center pins (labeled “QSPI”).</div>
+</li>
+<li class="level1"><div class="li"> Turn the board on. The board will now boot the image stored in the Quad SPI flash.</div>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit16" id="jtag_boot_mode">3.3 JTAG Boot Mode</h3>
+<div class="level3">
+
+<p>
+When placed in JTAG boot mode, the processor will wait until software is loaded by a host computer using the Xilinx tools. After software has been loaded, it is possible to either let the software begin executing, or step through it line by line using Xilinx SDK. 
+</p>
+
+<p>
+It is also possible to directly configure the PL over JTAG, independent of the processor. This can be done using the Vivado Hardware Server. 
+</p>
+
+<p>
+The Arty Z7 is configured to boot in Cascaded JTAG mode, which allows the PS to be accessed via the same JTAG port as the PL. It is also possible to boot the Arty Z7 in Independent JTAG mode by loading a jumper in JP2 and shorting it. This will cause the PS to not be accessible from the onboard JTAG circuitry, and only the PL will be visible in the scan chain. To access the PS over JTAG while in independent JTAG mode, users will have to route the signals for the PJTAG peripheral over EMIO, and use an external device to communicate with it.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit17" id="quad_spi_flash">4 Quad SPI Flash</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 features a Quad SPI serial NOR flash. This Multi-I/O SPI Flash memory is used to provide non-volatile code and data storage. It can be used to initialize the PS subsystem as well as configure the PL subsystem. 
+</p>
+
+<p>
+The relevant device attributes are:
+</p>
+<ul>
+<li class="level1"><div class="li"> 16 <abbr title="Megabyte">MB</abbr> </div>
+</li>
+<li class="level1"><div class="li"> x1, x2, and x4 support </div>
+</li>
+<li class="level1"><div class="li"> Bus speeds up to 104 <abbr title="Megahertz (million times per second)">MHz</abbr>, supporting Zynq configuration rates @ 100 <abbr title="Megahertz (million times per second)">MHz</abbr>. In Quad SPI mode, this translates to 400 Mb/s </div>
+</li>
+<li class="level1"><div class="li"> Powered from 3.3V </div>
+</li>
+</ul>
+
+<p>
+The SPI Flash connects to the Zynq-7000 APSoC and supports the Quad SPI interface. This requires connection to specific pins in MIO Bank 0/500, specifically MIO[1:6,8] as outlined in the Zynq datasheet. Quad-SPI feedback mode is used, thus qspi_sclk_fb_out/MIO[8] is left to freely toggle and is connected only to a 20K pull-up resistor to 3.3V. This allows a Quad SPI clock frequency greater than FQSPICLK2 (See the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a> for more on this). 
+</p>
+
+<p>
+In manufacturing, parts sometimes need to be replaced when the product goes end-of-life. The Quad SPI Flash memory on any particular Arty Z7 may be one of several found in Table 4.1 below. To determine which part is used by a particular board, check your boards revision number and look at the part number printed on the flash IC on the bottom of the Arty Z7 (See Figure 4.1).
+</p>
+
+<p>
+<img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-flash-callout-600.png?w=400&amp;tok=e8e925" class="media" loading="lazy" alt="" width="400" />
+</p>
+
+<p>
+<em>Figure 4.1. Arty Z7 Flash IC Location</em>
+</p>
+<div class="table sectionedit18"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> Manufacturer  </th><th class="col1 leftalign"> Part Number            </th><td class="col2 leftalign"> PCB Board Revision  </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> Winbond       </td><td class="col1 leftalign"> W25Q128JV[SP]xM        </td><td class="col2 leftalign"> ≥ D.0               </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Micron        </td><td class="col1 leftalign"> MT25QL128ABA8ESF-0SIT  </td><td class="col2 leftalign"> &lt; D.0               </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> Micron        </td><td class="col1 leftalign"> MT25QL128ABA8ESF-0AAT  </td><td class="col2 leftalign"> &lt; D.0               </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> Micron        </td><td class="col1 leftalign"> N25Q128A13ESF40E       </td><td class="col2 leftalign"> &lt; D.0               </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> Spansion      </td><td class="col1 leftalign"> S25FL128SAGMFI00       </td><td class="col2 leftalign"> &lt; D.0               </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 4.1. Arty Z7 Flash IC Drop-in Replacements</em>
+</p>
+
+<p>
+The part numbers are highly compatible, however, the W25Q128JV is not functionally equivalent to the previously-loaded parts and might require changes to customer applications (embedded software) depending on the board support package in use (<abbr title="Operating System">OS</abbr>, drivers, and libraries). Spansion and Micron parts used on revisions of the board &lt; D.0 are functionally equivalent to each other from the perspective of user software. It might be possible to implement any changes that might be needed in such a way as to keep compatibility with all load options. A non-exhaustive list of the differences between the W25Q128JV and the S25FL128S:
+</p>
+<ul>
+<li class="level1"><div class="li"> Manufacturer &amp; Device ID: “EFh 70h 18h” vs. “01h 20h 18h”</div>
+</li>
+<li class="level1"><div class="li"> 3&times;256-B Security Registers vs. 32&times;32-B OTP Array</div>
+</li>
+<li class="level1"><div class="li"> Security Register Read command 48h vs. OTP Read command 4Bh</div>
+</li>
+<li class="level1"><div class="li"> Memory organization: 256 64KB or 4096 4KB uniform erase sectors vs. 32 4-KB bottom and 256 64-KB hybrid erase sectors</div>
+</li>
+<li class="level1"><div class="li"> For revisions prior to D.0, the OTP region also includes a factory-programmed read-only 128-bit random number. The very lowest address range [0x00;0x0F] can be read to access the random number. See the Spansion S25FL128S datasheet for information on this random number and accessing the OTP region. The W25Q128JV&#039;s Security Registers do not have this random number.</div>
+</li>
+<li class="level1"><div class="li"> Maximum clock frequency for QPP, 4QPP commands: 133 <abbr title="Megahertz (million times per second)">MHz</abbr> vs. 80MHz.</div>
+</li>
+</ul>
+
+<p>
+Embedded software work-arounds depending on the board support package:
+</p>
+<ul>
+<li class="level1"><div class="li"> Stand-alone environments should be modified if special non-standard commands are in use. For example, OTP read/write features should account for opcode and address changes. Standard flash array read and write commands, single or quad are compatible between the two.</div>
+</li>
+<li class="level1"><div class="li"> The MAC address for the Gigabit Ethernet port needs to be read out using the Read Security Registers (48h) command and the address range [001000h;001005h]. The byte order is the same as before, ie. the first byte in transmission byte order is at the lowest address.</div>
+</li>
+<li class="level1"><div class="li"> Xilinx tools such as Vitis and Vivado support the W25Q128JV once the correct part number is chosen when targeting the Flash memory. Choose the “w25q128fv-qspi-x4-single” option which is an alias for the “w25q128jv-qspi-x4-single”. Support for w25q128jv is available in version 2018.3 and above.</div>
+</li>
+<li class="level1"><div class="li"> U-boot and Linux kernel built using the “jedec,spi-nor” compatibility string for the flash node needs no changes, as the part is identified during probe. If the old way of specifying a fixed part is used, it is recommended that the compatibility string is replaced with “jedec,spi-nor”.</div>
+</li>
+</ul>
+
+<p>
+<strong>Note:</strong> <em>Refer to the manufacturers&#039; datasheets<sup><a href="#refnotes:1:note1" name="refnotes:1:ref1" class="refnotes-ref">1)</a></sup><sup><a href="#refnotes:1:note2" name="refnotes:1:ref2" class="refnotes-ref">2)</a></sup> <sup><a href="#refnotes:1:note3" name="refnotes:1:ref3" class="refnotes-ref">3)</a></sup> <sup><a href="#refnotes:1:note4" name="refnotes:1:ref4" class="refnotes-ref">4)</a></sup> <sup><a href="#refnotes:1:note5" name="refnotes:1:ref5" class="refnotes-ref">5)</a></sup> and Zynq Technical Reference Manual<sup><a href="#refnotes:1:note6" name="refnotes:1:ref6" class="refnotes-ref">6)</a></sup> for more information.</em>
+</p>
+<div class="refnotes">
+<hr>
+<div class="notes">
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref1" name="refnotes:1:note1" class="backref">1)</a></b></sup>
+<span id="refnotes:1:note1:text">
+<a href="https://www.infineon.com/dgdl/Infineon-S25FL128S_S25FL256S_128_Mb_(16_MB)_256_Mb_(32_MB)_3.0V_SPI_Flash_Memory-DataSheet-v18_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ecfb6a64a17" class="urlextern" target="_tab" title="https://www.infineon.com/dgdl/Infineon-S25FL128S_S25FL256S_128_Mb_(16_MB)_256_Mb_(32_MB)_3.0V_SPI_Flash_Memory-DataSheet-v18_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ecfb6a64a17" rel="ugc nofollow noopener">S25FL128S Datasheet</a>
+</span></div>
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref2" name="refnotes:1:note2" class="backref">2)</a></b></sup>
+<span id="refnotes:1:note2:text">
+<a href="https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf" class="urlextern" target="_tab" title="https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf" rel="ugc nofollow noopener">W25Q128JV Datasheet</a>
+</span></div>
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref3" name="refnotes:1:note3" class="backref">3)</a></b></sup>
+<span id="refnotes:1:note3:text">
+<a href="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/mt25q/die-rev-a/mt25q_qlhs_l_128_aba_0.pdf" class="urlextern" target="_tab" title="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/mt25q/die-rev-a/mt25q_qlhs_l_128_aba_0.pdf" rel="ugc nofollow noopener">MT25QL128ABA8ESF-0SIT</a>
+</span></div>
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref4" name="refnotes:1:note4" class="backref">4)</a></b></sup>
+<span id="refnotes:1:note4:text">
+<a href="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/mt25q/die-rev-a/mt25q_qlhs_l_128_aba_0.pdf" class="urlextern" target="_tab" title="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/mt25q/die-rev-a/mt25q_qlhs_l_128_aba_0.pdf" rel="ugc nofollow noopener">MT25QL128ABA8ESF-0AAT</a>
+</span></div>
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref5" name="refnotes:1:note5" class="backref">5)</a></b></sup>
+<span id="refnotes:1:note5:text">
+<a href="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/n25q/n25q_128mb_3v_65nm.pdf?rev=9d6336dba62c476fbec1db38ee83553a" class="urlextern" target="_tab" title="https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/nor-flash/serial-nor/n25q/n25q_128mb_3v_65nm.pdf?rev=9d6336dba62c476fbec1db38ee83553a" rel="ugc nofollow noopener"> N25Q128A13ESF40E</a>
+</span></div>
+<div class="note justify">
+<sup><b><a href="#refnotes:1:ref6" name="refnotes:1:note6" class="backref">6)</a></b></sup>
+<span id="refnotes:1:note6:text">
+<a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Xilinx Zynq Technical Reference Manual (UG585)</a>
+</span></div>
+</div>
+</div>
+<hr />
+<hr />
+
+</div>
+
+<h2 class="sectionedit19" id="ddr_memory">5 DDR Memory</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 includes an IS43TR16256A-125KBL DDR3 memory components creating a single rank, 16-bit wide interface and a total of 512MiB of capacity. The DDR3 is connected to the hard memory controller in the Processor Subsystem (PS), as outlined in the Zynq documentation. 
+</p>
+
+<p>
+The PS incorporates an AXI memory port interface, a DDR controller, the associated PHY, and a dedicated I/O bank. DDR3 memory interface speeds up to 533 <abbr title="Megahertz (million times per second)">MHz</abbr>/1066 Mbps are supported¹. 
+</p>
+
+<p>
+Arty Z7 was routed with 40 ohm (+/-10%) trace impedance for single-ended signals, and differential clock and strobes set to 80 ohms (+/-10%). A feature called DCI (Digitally Controlled Impedance) is used to match the drive strength and termination impedance of the PS pins to the trace impedance. On the memory side, each chip calibrates its on-die termination and drive strength using a 240 ohm resistor on the ZQ pin.
+</p>
+
+<p>
+Due to layout reasons, the two data byte groups (DQ[0-7], DQ[8-15]) were swapped. To the same effect, the data bits inside byte groups were swapped as well. These changes are transparent to the user. During the whole design process the Xilinx PCB guidelines were followed.
+</p>
+
+<p>
+Both the memory chips and the PS DDR bank are powered from the 1.5V supply. The mid-point reference of 0.75V is created with a simple resistor divider and is available to the Zynq as external reference.
+</p>
+
+<p>
+For proper operation it is essential that the PS memory controller is configured properly. Settings range from the actual memory flavor to the board trace delays. For your convenience, the Zynq presets file for the Arty Z7 is provided on the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">resource center</a> and automatically configures the Zynq Processing System IP core with the correct parameters.
+</p>
+
+<p>
+For best DDR3 performance, DRAM training is enabled for write leveling, read gate, and read data eye options in the PS Configuration Tool in Xilinx tools. Training is done dynamically by the controller to account for board delays, process variations and thermal drift. Optimum starting values for the training process are the board delays (propagation delays) for certain memory signals. 
+</p>
+
+<p>
+Board delays are specified for each of the byte groups. These parameters are board-specific and were calculated from the PCB trace length reports. The DQS to CLK Delay and Board Delay values are calculated specific to the Arty Z7 memory interface PCB design. 
+</p>
+
+<p>
+For more details on memory controller operation, refer to the Xilinx <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>.
+</p>
+
+<p>
+¹Maximum actual clock frequency is 525 <abbr title="Megahertz (million times per second)">MHz</abbr> on the Arty Z7 due to PLL limitation.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit20" id="usb_uart_bridge_serial_port">6 USB UART Bridge (Serial Port)</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 includes an FTDI FT2232HQ USB-UART bridge (attached to connector J14) that lets you use PC applications to communicate with the board using standard COM port commands (or the tty interface in Linux). Drivers are automatically installed in Windows and newer versions of Linux. Serial port data is exchanged with the Zynq using a two-wire serial port (TXD/RXD). After the drivers are installed, I/O commands can be used from the PC directed to the COM port to produce serial data traffic on the Zynq pins. The port is tied to PS (MIO) pins and can be used in combination with the UART 0 controller.
+</p>
+
+<p>
+The Zynq presets file (available in the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a>) takes care of mapping the correct MIO pins to the UART 0 controller and uses the following default protocol parameters: 115200 baud rate, 1 stop bit, no parity, 8-bit character length.
+</p>
+
+<p>
+Two on-board status LEDs provide visual feedback on traffic flowing through the port: the transmit <abbr title="Light Emitting Diode">LED</abbr> (LD11) and the receive <abbr title="Light Emitting Diode">LED</abbr> (LD10). Signal names that imply direction are from the point-of-view of the DTE (Data Terminal Equipment), in this case the PC.
+</p>
+
+<p>
+The FT2232HQ is also used as the controller for the Digilent USB-JTAG circuitry, but the USB-UART and USB-JTAG functions behave entirely independent of one another. Programmers interested in using the UART functionality of the FT2232 within their design do not need to worry about the JTAG circuitry interfering with the UART data transfers, and vice-versa. The combination of these two features into a single device allows the Arty Z7 to be programmed, communicated with via UART, and powered from a computer attached with a single Micro USB cable. 
+</p>
+
+<p>
+The DTR signal from the UART controller on the FT2232HQ is connected to MIO12 of the Zynq device via JP1. Should the Arduino IDE be ported to work with the Arty Z7, this jumper can be shorted and MIO12 could be used to place the Arty Z7 in a “ready to receive a new sketch” state. This would mimic the behavior of typical Arduino IDE boot-loaders.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit21" id="microsd_slot">7 microSD Slot</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 provides a microSD slot (J9) for non-volatile external memory storage as well as booting the Zynq. The slot is wired to Bank 1/501 MIO[40-47], including Card Detect. On the PS side peripheral SDIO 0 is mapped out to these pins and controls communication with the SD card. The pinout can be seen in Table 7.1. The peripheral controller supports 1-bit and 4-bit SD transfer modes, but does not support SPI mode. Based on the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>, SDIO host mode is the only mode supported.
+</p>
+<div class="table sectionedit22"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> <strong>Signal Name</strong>  </td><td class="col1 leftalign"> <strong>Description</strong>  </td><td class="col2 leftalign"> <strong>Zynq Pin</strong>  </td><td class="col3 leftalign"> <strong>SD Slot Pin</strong>  </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>SD_D0</strong>        </td><td class="col1 leftalign"> Data[0]          </td><td class="col2 leftalign"> MIO42         </td><td class="col3 leftalign"> 7                </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>SD_D1</strong>        </td><td class="col1 leftalign"> Data[1]          </td><td class="col2 leftalign"> MIO43         </td><td class="col3 leftalign"> 8                </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>SD_D2</strong>        </td><td class="col1 leftalign"> Data[2]          </td><td class="col2 leftalign"> MIO44         </td><td class="col3 leftalign"> 1                </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>SD_D3</strong>        </td><td class="col1 leftalign"> Data[3]          </td><td class="col2 leftalign"> MIO45         </td><td class="col3 leftalign"> 2                </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong>SD_CCLK</strong>      </td><td class="col1 leftalign"> Clock            </td><td class="col2 leftalign"> MIO40         </td><td class="col3 leftalign"> 5                </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <strong>SD_CMD</strong>       </td><td class="col1 leftalign"> Command          </td><td class="col2 leftalign"> MIO41         </td><td class="col3 leftalign"> 3                </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> <strong>SD_CD</strong>        </td><td class="col1 leftalign"> Card Detect      </td><td class="col2 leftalign"> MIO47         </td><td class="col3 leftalign"> 9                </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 7.1. microSD pinout</em>
+</p>
+
+<p>
+The SD slot is a powered from 3.3V, but is connected through MIO Bank 1/501 (1.8V). Therefore, a TI TXS02612 level shifter performs this translation. The TXS02612 is actually 2-port SDIO port expander, but only its level shifter function is used. The connection diagram can be seen on Figure 7.1. Mapping out the correct pins and configuring the interface is handled by the Arty Z7 Zynq presets file, available on the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a>.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-microsd.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-microsd.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-microsd.png?w=500&amp;tok=e8a389" class="mediacenter" loading="lazy" alt="" width="500" /></a>
+</p>
+
+<p>
+<em>Figure 7.1. microSD slot signals</em>
+</p>
+
+<p>
+Both low speed and high speed cards are supported, the maximum clock frequency being 50 <abbr title="Megahertz (million times per second)">MHz</abbr>. A Class 4 card or better is recommended. 
+</p>
+
+<p>
+Refer to section 3.1 for information on how to boot from an SD card. For more information, consult the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit23" id="usb_host">8 USB Host</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 implements one of the two available PS USB OTG interfaces on the Zynq device. A Texas Instruments TUSB1210 USB 2.0 Transceiver Chip with an 8-bit ULPI interface is used as the PHY. The PHY features a complete HS-USB Physical Front-End supporting speeds of up to 480Mbs. The PHY is connected to MIO Bank 1/501, which is powered at 1.8V. The usb0 peripheral is used on the PS, connected through MIO[28-39]. The USB OTG interface is configured to act as an embedded host. USB OTG and USB device modes are not supported.
+</p>
+
+<p>
+The Arty Z7 is technically a “general purpose host”, because it provides the required 150 µF of capacitance on VBUS. The Arty Z7 can provide 500 mA on the 5V VBUS line.
+</p>
+
+<p>
+Note that if your design uses the USB Host port (embedded or general purpose), then the Arty Z7 should be powered via a battery or wall adapter capable of providing more power (such as the one included in the Arty Z7 accessory kit). 
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit24" id="ethernet_phy">9 Ethernet PHY</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 uses a Realtek PHY to implement a 10/100/1000 Ethernet port for network connection. The PHY connects to MIO Bank 501 (1.8V) and interfaces to the Zynq-7000 APSoC via RGMII for data and MDIO for management. The auxiliary interrupt (INTB) and reset (PHYRSTB) signals connect to MIO pins MIO10 and MIO9, respectively. 
+</p>
+
+<p>
+One of several Realtek PHY parts may be loaded on your board, depending on the revision of the board. To find out which part is loaded, check the PCB revision on the underside of the PCB. These devices are not functionally equivalent and may require changes to user applications,​ depending on the board support package (<abbr title="Operating System">OS</abbr>, drivers, and libraries) used. The table below lists the possible load options, and a non-exhaustive list of the differences between these two PHY devices is presented at the end of this section. 
+</p>
+
+<p>
+<em>Table 9.1: Ethernet PHY part loaded</em>
+</p>
+<div class="table sectionedit25"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> P/N       </th><th class="col1 leftalign"> PCB Revision  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> RTL8211E  </td><td class="col1 leftalign"> &lt; D.0         </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> RTL8211F  </td><td class="col1 leftalign"> ≥ D.0         </td>
+	</tr>
+</table></div>
+<dl class="outliner outliner-open outliner-nopopup"><dt>Ethernet PHY - Revision ≥ D.0 </dt><dd>
+<a href="https://digilent.com/reference/_detail/programmable-logic/arty-z7/arty-z7-d0-eth.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="programmable-logic:arty-z7:arty-z7-d0-eth.png" rel="noopener"><img src="https://digilent.com/reference/_media/programmable-logic/arty-z7/arty-z7-d0-eth.png?w=500&amp;tok=5d9153" class="mediacenter" loading="lazy" alt="" width="500" /></a>
+<em>Figure 9.1. Ethernet PHY signals</em></dd></dl>
+<dl class="outliner outliner-nopopup"><dt>Ethernet PHY - Revision &lt; D.0 </dt><dd>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-eth.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-eth.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-eth.png?w=500&amp;tok=104d12" class="mediacenter" loading="lazy" alt="" width="500" /></a>
+<em>Figure 9.1. Ethernet PHY signals</em></dd></dl>
+
+<p>
+After power-up the PHY starts with Auto Negotiation enabled, advertising 10/100/1000 link speeds and full duplex. If there is an Ethernet-capable partner connected, the PHY automatically establishes a link with it, even with the Zynq not configured.
+</p>
+
+<p>
+Three status indicator LEDs, labeled “10”, “100”, and “1G” near the RJ-45 connector indicate both status and link state of the three connection speeds. Table 10.1 shows the default behavior.
+</p>
+<div class="table sectionedit26"><table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  <strong>Designator</strong>  </td><td class="col1 centeralign">  <strong>State</strong>  </td><td class="col2 centeralign">  <strong>Description</strong>           </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign" rowspan="2">  10              </td><td class="col1 leftalign"> Steady on   </td><td class="col2 leftalign"> Link Up at 10 Mbps         </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Blinking    </td><td class="col1 leftalign"> Transmitting or Receiving  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign" rowspan="2">  100             </td><td class="col1 leftalign"> Steady on   </td><td class="col2 leftalign"> Link Up at 100 Mbps        </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> Blinking    </td><td class="col1 leftalign"> Transmitting or Receiving  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign" rowspan="2">  1G              </td><td class="col1 leftalign"> Steady on   </td><td class="col2 leftalign"> Link Up at 1000 Mbps       </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> Blinking    </td><td class="col1 leftalign"> Transmitting or Receiving  </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 9.2. Ethernet status LEDs</em>
+</p>
+
+<p>
+Prior to revision D.0, only two status indicator LEDs were used (“LINK” and “ACT”). Check the dropdown below to determine their behavior.
+</p>
+<dl class="outliner outliner-nopopup"><dt>Revision &lt; D.0 LED Behavior </dt><dd>
+<div class="table sectionedit27"><table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  <strong>Function</strong>  </td><td class="col1 centeralign">  <strong>Designator</strong>  </td><td class="col2 centeralign">  <strong>State</strong>                </td><td class="col3 centeralign">  <strong>Description</strong>                            </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign" rowspan="2">  LINK          </td><td class="col1 centeralign" rowspan="2">  LD7             </td><td class="col2 leftalign"> Steady on                 </td><td class="col3 leftalign"> Link 10/100/1000                            </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Blinking 0.4s ON, 2s OFF  </td><td class="col1 leftalign"> Link, Energy Efficient Ethernet (EEE) mode  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  ACT           </td><td class="col1 centeralign">  LD8             </td><td class="col2 leftalign"> Blinking                  </td><td class="col3 leftalign"> Transmitting or Receiving                   </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 9.3. Ethernet status LEDs</em>
+</p>
+</dd></dl>
+
+<p>
+The Zynq incorporates two independent Gigabit Ethernet Controllers. They implement a 10/100/1000 half/full duplex Ethernet MAC. Of these two, GEM 0 can be mapped to the MIO pins where the PHY is connected. Since the MIO bank is powered from 1.8V, the RGMII interface uses 1.8V HSTL Class 1 drivers. For this I/O standard an external reference of 0.9V is provided in bank 501 (PS_MIO_VREF). Mapping out the correct pins and configuring the interface is handled by the Arty Z7 Zynq Presets file, available on the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a>.
+</p>
+
+<p>
+Although the default power-up configuration of the PHY might be enough in most applications, the MDIO bus is available for management. The PHY is assigned the 5-bit address 00001 on the MDIO bus. With simple register read and write commands, status information can be read out or configuration changed. The Realtek PHY follows industry-standard register map for basic configuration.
+</p>
+
+<p>
+The RGMII specification calls for the receive (RXC) and transmit clock (TXC) to be delayed relative to the data signals (RXD[0:3], RXCTL and TXD[0:3], TXCTL). Xilinx PCB guidelines also require this delay to be added. The PHY is capable of inserting a 2ns delay on both the TXC and RXC so that board traces do not need to be made longer.
+</p>
+
+<p>
+In revisions &lt; D.0, the PHY is clocked from the same 50 <abbr title="Megahertz (million times per second)">MHz</abbr> oscillator that clocks the Zynq PS. The parasitic capacitance of the two loads is low enough to be driven from a single source.
+</p>
+
+<p>
+On an Ethernet network, each node needs a unique MAC address. The Quad-SPI flash memory is programmed with a 48-bit globally unique EUI-48/64™ compatible identifier during manufacturing. Due to changes in which flash part is loaded on the Arty Z7, accessing the MAC address differs slightly depending on which revision of the board you have. For revisions prior to F.0, the MAC address is contained in the one-time-programmable (OTP) region of the Quad-SPI flash. The OTP address range [0x20;0x25] contains the identifier with the first byte in transmission byte order being at the lowest address. For revisions after and including F.0, the MAC address is contained in the security registers and needs to be read out using the Read Security Registers (48h) command from the address range [001000h;001005h]. The byte order is the same as in older revisions, ie. the first byte in transmission byte order is at the lowest address. Refer to the Flash memory datasheet that is associated with the chip loaded on the board (see the <em class="u"><a href="https://digilent.com/reference/programmable-logic/arty-z7/reference-manual#quad_spi_flash" class="wikilink1" title="programmable-logic:arty-z7:reference-manual" data-wiki-id="programmable-logic:arty-z7:reference-manual">Quad SPI Flash</a></em> section for more details) for information on the commands required to access these memory regions.
+</p>
+
+<p>
+For more information on using the Gigabit Ethernet MAC, refer to the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>.
+</p>
+<hr />
+
+<p>
+Differences between the RTL8211E and RTL8211F:
+</p>
+<ul>
+<li class="level1"><div class="li"> PHYSR1 (PHY Specific Status Register 1) at Page 0xA43, Address 0x1A vs. PHYSR at Address 0x11. Register field layout also differs. Affected functionality includes auto-negotiated speed, duplex and link detection.</div>
+</li>
+<li class="level1"><div class="li"> INSR (Interrupt Status Register) at Page 0xA43, Address 0x1D vs. INSR at Address 0x13. Register field layout also differs. Affected functionality is interrupt detection.</div>
+</li>
+<li class="level1"><div class="li"> INER (Interrupt Enable Register) power-on defaults to only the PHY Register Accessible Interrupt being enabled vs. all interrupt sources enabled. Interrupt sources must now be explicitly enabled, if required.</div>
+</li>
+<li class="level1"><div class="li"> Power-on sequencing requirements changed. The RTL8211F now regulates its own core voltage, as its internal regulator cannot be turned off. The 1.8V I/O voltage sequencing requirements forced all I/O circuitry in bank 501 (Ethernet, USB, UART, SD) to be separated from the main 1.8V board supply by a load switch. This I/O supply is now the last in the sequence to power-on. The board power-on reset circuitry required to be changed as well. Power-on now takes more time.</div>
+</li>
+<li class="level1"><div class="li"> Power-on core logic ready time 100 ms vs. 20 ms. The RTL8211F reserves a 100 ms window after power-on that is not being used for now. The only register access allowed in this window is Page 0xa46, Reg. 20, bit[1]=1 (PHY Special Config Done), to skip this window and enter normal operating state. Otherwise, the PHY will do it automatically when the wait period ends. Entering normal operating state is signaled by the ETH_<abbr title="Interrupt">INT</abbr>_B interrupt. This behavior affects only very short boot time applications, which have been explicitly optimized for this purpose. Such applications must make sure they monitor the PHY interrupt and do not access any registers other than the one stated above before the Special Config Done even arrives. The typical boot time of a small non-optimized stand-alone application from the QSPI flash is 86 ms from the de-assertion the PS_POR_B signal. The PS_POR_B delay was increased and the PHY is now taken out of reset ahead of the Zynq. Therefore, without specific boot time optimizations, the RTL8211F is guaranteed to be ready by the time the software needs it.</div>
+</li>
+<li class="level1"><div class="li"> Three PHY status LEDs vs. two. The Link and Activity LEDs have been replaced by one <abbr title="Light Emitting Diode">LED</abbr> for each link speed that integrate link and activity. These are now labeled “10”, “100”, and “1G”.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+Suggested embedded software work-arounds depending on the board support package:
+</p>
+<ul>
+<li class="level1"><div class="li"> Stand-alone environments are expected to be using Xilinx’s lwip library with built-in PHY support for the RTL8211E. This will need to be replaced by a modified library that adds support for the RTL8211F. The patched library is published on Digilent’s Github page: <a href="https://github.com/Digilent/embeddedsw/tree/realtek-21.1" class="urlextern" target="_tab" title="https://github.com/Digilent/embeddedsw/tree/realtek-21.1" rel="ugc nofollow noopener">Patched Library</a>. It is expected to be upstreamed to Xilinx in a future Vitis version. <br/>
+If the ETH_<abbr title="Interrupt">INT</abbr>_B interrupt is used in the application, the necessary interrupt sources must now be enabled explicitly. <br/>
+If the application optimizes boot time, the PHY needs to be initialized by writing Page 0xa46, Reg. 20, bit[1]=1 (PHY Special Config Done).</div>
+</li>
+<li class="level1"><div class="li"> U-boot and Linux kernel built using Petalinux 2016.1 or later support RTL8211F with no changes necessary.</div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h2 class="sectionedit28" id="hdmi">10 HDMI</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 contains two unbuffered HDMI ports: one source port J11 (output), and one sink port J10 (input). Both ports use HDMI type-A receptacles with the data and clock signals terminated and connected directly to the Zynq PL.
+</p>
+
+<p>
+Both HDMI and DVI systems use the same TMDS signaling standard, directly supported by Zynq PL&#039;s user I/O infrastructure. Also, HDMI sources are backward compatible with DVI sinks, and vice versa. Thus, simple passive adaptors (available at most electronics stores) can be used to drive a DVI monitor or accept a DVI input. The HDMI receptacle only includes digital signals, so only DVI-D mode is possible.
+</p>
+
+<p>
+The 19-pin HDMI connectors include three differential data channels, one differential clock channel five <abbr title="Ground">GND</abbr> connections, a one-wire Consumer Electronics Control (CEC) bus, a two-wire Display Data Channel (DDC) bus that is essentially an I2C bus, a Hot Plug Detect (HPD) signal, a 5V signal capable of delivering up to 50mA, and one reserved (RES) pin. All non-power signals are wired to the Zynq PL with the exception of RES.
+</p>
+
+<p>
+Note that if you use the HDMI source port, in order to ensure the minimum level of the 5V signal is at least 4.8V as required by the HDMI specification, the Arty Z7 should be powered via a wall adapter (such as the one included in the Arty Z7 accessory kit); thus, the 5V level will be established by the IC24 on-board regulator. Otherwise, USB power can provide a voltage as low as 4.75V, which would be too low for the HDMI source port 5V signal.
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> Pin/Signal          </th><th class="col1 leftalign" colspan="2"> J11 (source)                                                      </th><th class="col3 leftalign" colspan="2"> <span style='color:#ed1c24; '>J10 (sink)</span>                                                                               </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0 leftalign">                     </th><th class="col1 leftalign"> Description                                            </th><th class="col2 leftalign"> FPGA pin  </th><th class="col3 leftalign"> <span style='color:#ed1c24; '>Description</span>                                            </th><th class="col4 leftalign"> <span style='color:#ed1c24; '>FPGA pin</span>  </th>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>D[2]_P, D[2]_N</strong>  </td><td class="col1 leftalign"> Data output                                            </td><td class="col2 leftalign"> J18, H18  </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Data input</span>                                             </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>N20, P20</span>  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>D[1]_P, D[1]_N</strong>  </td><td class="col1 leftalign"> Data output                                            </td><td class="col2 leftalign"> K19, J19  </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Data input</span>                                             </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>T20, U20</span>  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>D[0]_P, D[0]_N</strong>  </td><td class="col1 leftalign"> Data output                                            </td><td class="col2 leftalign"> K17, K18  </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Data input</span>                                             </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>V20, W20</span>  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong>CLK_P, CLK_N</strong>    </td><td class="col1 leftalign"> Clock output                                           </td><td class="col2 leftalign"> L16, L17  </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Clock input</span>                                            </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>N18, P19</span>  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <strong>CEC</strong>             </td><td class="col1 leftalign"> Consumer Electronics Control bidirectional (optional)  </td><td class="col2 leftalign"> G15       </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Consumer Electronics Control bidirectional (optional)</span>  </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>H17</span>       </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> <strong>SCL, SDA</strong>        </td><td class="col1 leftalign"> DDC bidirectional (optional)                           </td><td class="col2 leftalign"> M17, M18  </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>DDC bidirectional</span>                                      </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>U14, U15</span>  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> <strong>HPD/HPA</strong>         </td><td class="col1 leftalign"> Hot-plug detect input (inverted, optional)             </td><td class="col2 leftalign"> R19       </td><td class="col3 leftalign"> <span style='color:#ed1c24; '>Hot-plug assert output</span>                                 </td><td class="col4 leftalign"> <span style='color:#ed1c24; '>T19</span>       </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 10.1. HDMI pin description and assignment.</em>
+</p>
+
+</div>
+
+<h3 class="sectionedit30" id="tmds_signals">10.1 TMDS Signals</h3>
+<div class="level3">
+
+<p>
+HDMI/DVI is a high-speed digital video stream interface using transition-minimized differential signaling (TMDS). To make proper use of either of the HDMI ports, a standard-compliant transmitter or receiver needs to be implemented in the Zynq PL. The implementation details are outside the scope of this manual. Check out the vivado-library IP Core repository on the <a href="https://github.com/Digilent" class="urlextern" target="_tab" title="https://github.com/Digilent" rel="ugc nofollow noopener">Digilent github</a> for ready-to-use reference IP.
+</p>
+
+</div>
+
+<h3 class="sectionedit31" id="auxiliary_signals">10.2 Auxiliary signals</h3>
+<div class="level3">
+
+<p>
+Whenever a sink is ready and wishes to announce its presence, it connects the 5V0 supply pin to the HPD pin. On the Arty Z7, this is done by driving the Hot Plug Assert signal high. Note this should only be done after a DDC channel slave has been implemented in the Zynq PL and is ready to transmit display data.
+</p>
+
+<p>
+The Display Data Channel, or DDC, is a collection of protocols that enable communication between the display (sink) and graphics adapter (source). The DDC2B variant is based on I2C, the bus master being the source and the bus slave the sink. When a source detects high level on the HPD pin, it queries the sink over the DDC bus for video capabilities. It determines whether the sink is DVI or HDMI-capable and what resolutions are supported. Only afterwards will video transmission begin. Refer to VESA E-DDC specifications for more information.
+</p>
+
+<p>
+The Consumer Electronics Control, or CEC, is an optional protocol that allows control messages to be passed around on an HDMI chain between different products. A common use case is a TV passing control messages originating from a universal remote to a DVR or satellite receiver. It is a one-wire protocol at 3.3V level connected to a Zynq PL user I/O pin. The wire can be controlled in an open-drain fashion allowing for multiple devices sharing a common CEC wire. Refer to the CEC addendum of HDMI 1.3 or later specifications for more information.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit32" id="clock_sources">11 Clock Sources</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 provides a 50 <abbr title="Megahertz (million times per second)">MHz</abbr> clock to the Zynq PS_CLK input, which is used to generate the clocks for each of the PS subsystems. The 50 <abbr title="Megahertz (million times per second)">MHz</abbr> input allows the processor to operate at a maximum frequency of 650 <abbr title="Megahertz (million times per second)">MHz</abbr> and the DDR3 memory controller to operate at a maximum of 525 <abbr title="Megahertz (million times per second)">MHz</abbr> (1050 Mbps). The Arty Z7 Zynq Presets file available on the <a href="https://digilent.com/reference/programmable-logic/arty-z7/start" class="wikilink1" title="programmable-logic:arty-z7:start" data-wiki-id="programmable-logic:arty-z7:start">Arty Z7 Resource Center</a> can be imported into the Zynq Processing System IP core in a Vivado project to properly configure the Zynq to work with the 50 <abbr title="Megahertz (million times per second)">MHz</abbr> input clock.
+</p>
+
+<p>
+The PS has a dedicated PLL capable of generating up to four reference clocks, each with settable frequencies, that can be used to clock custom logic implemented in the PL. Additionally, the Arty Z7 provides an external 125 <abbr title="Megahertz (million times per second)">MHz</abbr> reference clock directly to pin H16 of the PL. The external reference clock allows the PL to be used completely independently of the PS, which can be useful for simple applications that do not require the processor. 
+</p>
+
+<p>
+The PL of the Zynq also includes MMCM’s and PLL’s that can be used to generate clocks with precise frequencies and phase relationships. Any of the four PS reference clocks or the 125 <abbr title="Megahertz (million times per second)">MHz</abbr> external reference clock can be used as an input to the MMCMs and PLLs. The Arty Z7-10 includes 2 MMCM&#039;s and 2 PLL&#039;s, and the Arty Z7-20 includes 4 MMCM&#039;s and 4 PLL&#039;s. For a full description of the capabilities of the Zynq PL clocking resources, refer to the “7 Series FPGAs Clocking Resources User Guide” available from Xilinx.
+</p>
+
+<p>
+Figure 11.1 outlines the clocking scheme used on the Arty Z7. Note that the reference clock output from the Ethernet PHY is used as the 125 <abbr title="Megahertz (million times per second)">MHz</abbr> reference clock to the PL, in order to cut the cost of including a dedicated oscillator for this purpose. Keep in mind that CLK125 will be disabled when the Ethernet PHY (IC1) is held in hardware reset by driving the PHYRSTB signal low.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-clocking.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-clocking.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-clocking.png?w=500&amp;tok=6ee315" class="mediacenter" loading="lazy" alt="" width="500" /></a>
+</p>
+
+<p>
+<em>Figure 11.1. Arty Z7 clocking.</em>
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit33" id="basic_io">12 Basic I/O</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 board includes two tri-color LEDs, 2 switches, 4 push buttons, and 4 individual LEDs as shown in Figure 12.1. The push buttons and slide switches are connected to the Zynq PL via series resistors to prevent damage from inadvertent short circuits (a short circuit could occur if an FPGA pin assigned to a push button or slide switch was inadvertently defined as an output). The four push buttons are “momentary” switches that normally generate a low output when they are at rest, and a high output only when they are pressed. Slide switches generate constant high or low inputs depending on their position.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-gpio.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-gpio.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-gpio.png?w=500&amp;tok=45c1b2" class="mediacenter" loading="lazy" title="Figure 12.1. Arty Z7 GPIO." alt="Figure 12.1. Arty Z7 GPIO." width="500" /></a>
+</p>
+
+<p>
+<em>Figure 12.1. Arty Z7 <abbr title="General Purpose Input/Output">GPIO</abbr>.</em>
+</p>
+
+<p>
+The four individual high-efficiency LEDs are anode-connected to the Zynq PL via 330-ohm resistors, so they will turn on when a logic high voltage is applied to their respective I/O pin. Additional LEDs that are not user-accessible indicate power-on, PL programming status, and USB and Ethernet port status.
+</p>
+
+</div>
+
+<h3 class="sectionedit34" id="tri-color_leds">12.1 Tri-Color LEDs</h3>
+<div class="level3">
+
+<p>
+The Arty Z7 board contains two tri-color LEDs. Each tri-color <abbr title="Light Emitting Diode">LED</abbr> has three input signals that drive the cathodes of three smaller internal LEDs: one red, one blue, and one green. Driving the signal corresponding to one of these colors high will illuminate the internal <abbr title="Light Emitting Diode">LED</abbr>. The input signals are driven by the Zynq PL through a transistor, which inverts the signals. Therefore, to light up the tri-color <abbr title="Light Emitting Diode">LED</abbr>, the corresponding signals need to be driven high. The tri-color <abbr title="Light Emitting Diode">LED</abbr> will emit a color dependent on the combination of internal LEDs that are currently being illuminated. For example, if the red and blue signals are driven high and green is driven low, the tri-color <abbr title="Light Emitting Diode">LED</abbr> will emit a purple color.
+</p>
+
+<p>
+Digilent strongly recommends the use of pulse-width modulation (PWM) when driving the tri-color LEDs. Driving any of the inputs to a steady logic ‘1’ will result in the <abbr title="Light Emitting Diode">LED</abbr> being illuminated at an uncomfortably bright level. You can avoid this by ensuring that none of the tri-color signals are driven with more than a 50% duty cycle. Using PWM also greatly expands the potential color palette of the tri-color led. Individually adjusting the duty cycle of each color between 50% and 0% causes the different colors to be illuminated at different intensities, allowing virtually any color to be displayed.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit35" id="mono_audio_output">13 Mono Audio Output</h2>
+<div class="level2">
+
+<p>
+The on-board audio jack (J13) is driven by a Sallen-Key Butterworth Low-pass 4th Order Filter that provides mono audio output. The circuit of the low-pass filter is shown in Figure 14.1. The input of the filter (AUD_PWM) is connected to the Zynq PL pin R18. A digital input will typically be a pulse-width modulated (PWM) or pulse density modulated (PDM) open-drain signal produced by the FPGA. The signal needs to be driven low for logic ‘0’ and left in high-impedance for logic ‘1’, which is accomplished using a buffer circuit with open-drain outputs, allowing the FPGA output pin to be driven using a standard output signal without requiring the use of an additional internal tri-state buffer. An on-board pull-up resistor to a clean analog 3.3V rail will establish the proper voltage for logic ‘1’. The low-pass filter on the input will act as a reconstruction filter to convert the pulse-width modulated digital signal into an analog voltage on the audio jack output.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-audio-sch.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-audio-sch.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-audio-sch.png" class="mediacenter" loading="lazy" alt="" /></a>
+</p>
+
+<p>
+<em>Figure 13.1. Audio Output Circuit.</em>
+</p>
+
+<p>
+The Audio shut-down signal (AUD_SD) is used to mute the audio output. It is connected to Zynq PL pin T17. To use the audio output, this signal must be driven to logic high.
+</p>
+
+<p>
+The frequency response of SK Butterworth Low-Pass Filter is shown in Figure 13.2. The AC analysis of the circuit is done using NI Multisim 12.0.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-audio-chart-nolabel.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-audio-chart-nolabel.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-audio-chart-nolabel.png?w=550&amp;tok=e09a74" class="mediacenter" loading="lazy" alt="" width="550" /></a>
+</p>
+
+<p>
+<em>Figure 13.2. Audio Output Frequency Response.</em>
+</p>
+
+</div>
+
+<h3 class="sectionedit36" id="pulse-width_modulation">13.1 Pulse-Width Modulation</h3>
+<div class="level3">
+
+<p>
+A pulse-width modulated (PWM) signal is a chain of pulses at some fixed frequency, with each pulse potentially having a different width. This digital signal can be passed through a simple low-pass filter that integrates the digital waveform to produce an analog voltage proportional to the average pulse-width over some interval (the interval is determined by the 3dB cut-off frequency of the low-pass filter and the pulse frequency). For example, if the pulses are high for an average of 10% of the available pulse period, then an integrator will produce an analog value that is 10% of the Vdd voltage. Figure 13.1.1 shows a waveform represented as a PWM signal.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-audio-pdm.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-audio-pdm.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-audio-pdm.png?w=600&amp;tok=64d619" class="mediacenter" loading="lazy" alt="" width="600" /></a>
+</p>
+
+<p>
+<em>Figure 13.1.1. PWM Waveform.</em>
+</p>
+
+<p>
+The PWM signal must be integrated to define an analog voltage. The low-pass filter 3dB frequency should be an order of magnitude lower than the PWM frequency, so that signal energy at the PWM frequency is filtered from the signal. For example, if an audio signal must contain up to 5 KHz of frequency information, then the PWM frequency should be at least 50 KHz (and preferably even higher). In general, in terms of analog signal fidelity, the higher the PWM frequency, the better. Figure 13.1.2 shows a representation of a PWM integrator producing an output voltage by integrating the pulse train. Note the steady-state filter output signal amplitude ratio to Vdd is the same as the pulse-width duty cycle (duty cycle is defined as pulse-high time divided by pulse-window time).
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-audio-pwm.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-audio-pwm.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-audio-pwm.png?w=600&amp;tok=0ccd62" class="mediacenter" loading="lazy" alt="" width="600" /></a>
+</p>
+
+<p>
+<em>Figure 13.1.2. PWM Output Voltage.</em>
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit37" id="reset_sources">14 Reset Sources</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit38" id="power-on_reset_signals">14.1 Power-on Reset Signals</h3>
+<div class="level3">
+
+<p>
+The Zynq PS supports external power-on reset signals. The power-on reset is the master reset of the entire chip. This signal resets every register in the device capable of being reset. The Arty Z7 drives this signal from the PGOOD signal of the TPS65400 power regulator in order to hold the system in reset until all power supplies are valid. 
+</p>
+
+</div>
+
+<h3 class="sectionedit39" id="program_push_button_switch">14.2 Program Push Button Switch</h3>
+<div class="level3">
+
+<p>
+A PROG push switch, labeled PROG, toggles Zynq PROG_B. This resets the PL and causes DONE to be de-asserted. The PL will remain unconfigured until it is reprogrammed by the processor or via JTAG. 
+</p>
+
+</div>
+
+<h3 class="sectionedit40" id="processor_subsystem_reset">14.3 Processor Subsystem Reset</h3>
+<div class="level3">
+
+<p>
+The external system reset, labeled SRST, resets the Zynq device without disturbing the debug environment. For example, the previous break points set by the user remain valid after system reset. Due to security concerns, system reset erases all memory content within the PS, including the OCM. The PL is also cleared during a system reset. System reset does not cause the boot mode strapping pins to be re-sampled.
+</p>
+
+<p>
+The SRST button also causes the CK_RST signal to toggle in order to trigger a reset on any attached shields.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit41" id="pmod_ports">15 Pmod Ports</h2>
+<div class="level2">
+
+<p>
+Pmod ports are 2&times;6, right-angle, 100-mil spaced female connectors that mate with standard 2&times;6 pin headers. Each 12-pin Pmod port provides two 3.3V <abbr title="Positive Voltage Supply">VCC</abbr> signals (pins 6 and 12), two Ground signals (pins 5 and 11), and eight logic signals, as shown in Figure 15.1. The <abbr title="Positive Voltage Supply">VCC</abbr> and Ground pins can deliver up to 1A of current, but care must be taken not to exceed any of the power budgets of the onboard regulators or the external power supply (see the 3.3V rail current limits listed in the “Power Supplies” section). 
+</p>
+
+<p>
+<strong>Warning:</strong> <em>Since the Pmod pins are connected to Zynq PL I/O pins using a 3.3V logic standard, care should be taken not to drive these pins over 3.4V.</em>
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_detail/reference/programmable-logic/arty-z7/arty-z7-pmod.png?id=programmable-logic%3Aarty-z7%3Areference-manual" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-pmod.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-pmod.png?w=300&amp;tok=9c98d7" class="mediacenter" loading="lazy" alt="" width="300" /></a>
+<em>Figure 15.1. Pmod Port Diagram</em>
+</p>
+
+<p>
+Digilent produces a large collection of Pmod accessory boards that can attach to the Pmod expansion connectors to add ready-made functions like A/D’s, D/A’s, motor drivers, sensors, and other functions. See <a href="http://www.digilentinc.com" class="urlextern" target="_tab" title="http://www.digilentinc.com" rel="ugc nofollow noopener">www.digilentinc.com</a> for more information.
+</p>
+
+<p>
+Each Pmod port found on Digilent FPGA boards falls into one of four categories: standard, MIO connected, XADC, or high-speed. The Arty Z7 has two Pmod ports, both of which are the high-speed type. The following section describes the high-speed type of Pmod port.
+</p>
+
+</div>
+
+<h3 class="sectionedit42" id="high-speed_pmods">15.1 High-Speed Pmods</h3>
+<div class="level3">
+
+<p>
+The High-speed Pmods have their data signals routed as impedance matched differential pairs for maximum switching speeds. They have pads for loading resistors for added protection, but the Arty Z7 ships with these loaded as 0-Ohm shunts. With the series resistors shunted, these Pmods offer no protection against short circuits, but allow for much faster switching speeds. The signals are paired to the adjacent signals in the same row: pins 1 and 2, pins 3 and 4, pins 7 and 8, and pins 9 and 10. 
+</p>
+
+<p>
+Traces are routed 100 ohm (+/- 10%) differential. 
+</p>
+
+<p>
+If pins on this port are used as single-ended signals, coupled pairs may exhibit crosstalk. In applications where this is a concern, one of the signals should be grounded (drive it low from the FPGA) and use its pair for the signal-ended signal.
+</p>
+
+<p>
+Since the High-Speed Pmods have 0-ohm shunts instead of protection resistors, the operator must take precaution to ensure that they do not cause any shorts.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit43" id="arduinochipkit_shield_connector">16 Arduino/chipKIT Shield Connector</h2>
+<div class="level2">
+
+<p>
+The Arty Z7 can be connected to standard Arduino and chipKIT shields to add extended functionality. Special care was taken while designing the Arty Z7 to make sure it is compatible with the majority of Arduino and chipKIT shields on the market. The shield connector has 49 pins connected to the Zynq PL for general purpose Digital I/O on the Arty Z7-20 and 26 on the Arty Z7-10. Due to the flexibility of FPGAs, it is possible to use these pins for just about anything including digital read/write, SPI connections, UART connections, I2C connections, and PWM. Six of these pins (labeled AN0-AN5) can also be used as single-ended analog inputs with an input range of 0V-3.3V, and another six (labeled AN6-11) can be used as differential analog inputs.
+</p>
+
+<p>
+<strong>Warning:</strong> <em>The Arty Z7 is not compatible with shields that output 5V digital or analog signals. Driving pins on the Arty Z7 shield connector above 3.4V may cause damage to the Zynq.</em>
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield.png" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-shield.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield.png?w=600&amp;tok=1825c4" class="mediacenter" loading="lazy" title="Figure 16.1. Shield connector pin diagram." alt="Figure 16.1. Shield connector pin diagram." width="600" /></a>
+</p>
+
+<p>
+<em>Figure 16.1. Shield Pin Diagram.</em>
+</p>
+<div class="table sectionedit44"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Pin Name                         </th><th class="col1 leftalign"> Shield Function                        </th><th class="col2 leftalign"> Arty Z7 Connection                                                                                                                                       </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>IO0</strong>-<strong>IO13</strong>                 </td><td class="col1 leftalign"> General purpose I/O pins               </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>IO26</strong>-<strong>IO41</strong>, <strong>A (IO42)</strong>  </td><td class="col1 leftalign"> Arty Z7-20 General purpose I/O pins    </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>SCL</strong>                          </td><td class="col1 leftalign"> I2C Clock                              </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>SDA</strong>                          </td><td class="col1 leftalign"> I2C Data                               </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong><abbr title="SPI Clock">SCLK</abbr></strong>                         </td><td class="col1 leftalign"> SPI Clock                              </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <strong><abbr title="Master Out Slave In">MOSI</abbr></strong>                         </td><td class="col1 leftalign"> SPI Data out                           </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> <strong><abbr title="Master In Slave Out">MISO</abbr></strong>                         </td><td class="col1 leftalign"> SPI Data in                            </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> <strong>SS</strong>                           </td><td class="col1 leftalign"> SPI Slave Select                       </td><td class="col2 leftalign"> See Section titled “Shield Digital I/O”                                                                                                                  </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"> <strong>A0</strong>-<strong>A5</strong>                    </td><td class="col1 leftalign"> Single-Ended Analog Input              </td><td class="col2 leftalign"> See Section titled “Shield Analog I/O”                                                                                                                   </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"> <strong>A6</strong>-<strong>A11</strong>                   </td><td class="col1 leftalign"> Differential Analog Input              </td><td class="col2 leftalign"> See Section titled “Shield Analog I/O”                                                                                                                   </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"> <strong>V_P</strong>, <strong>V_N</strong>                 </td><td class="col1 leftalign"> Dedicated Differential Analog Input    </td><td class="col2 leftalign"> See Section titled “Shield Analog I/O”                                                                                                                   </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> <strong>XGND</strong>                         </td><td class="col1 leftalign"> XADC Analog Ground                     </td><td class="col2 leftalign"> Connected to net used to drive the XADC ground reference on the Zynq (VREFN)                                                                             </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign"> <strong>XVREF</strong>                        </td><td class="col1 leftalign"> XADC Analog Voltage Reference          </td><td class="col2 leftalign"> Connected to 1.25 V, 25mA rail used to drive the XADC voltage reference on the Zynq (VREFP)                                                              </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign"> <strong><em>N/C</em></strong>                      </td><td class="col1 leftalign"> Not Connected                          </td><td class="col2 leftalign"> Not Connected                                                                                                                                            </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 leftalign"> <strong>IOREF</strong>                        </td><td class="col1 leftalign"> Digital I/O Voltage reference          </td><td class="col2 leftalign"> Connected to the Arty Z7 3.3V Power Rail (See the “Power Supplies” section)                                                                              </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 leftalign"> <strong>RST</strong>                          </td><td class="col1 leftalign"> Reset to Shield                        </td><td class="col2 leftalign"> Connected to the red “SRST” button and MIO pin 12 of the Zynq. When JP1 is shorted, it is also connected to the DTR signal of the FTDI USB-UART bridge.  </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign"> <strong>3V3</strong>                          </td><td class="col1 leftalign"> 3.3V Power Rail                        </td><td class="col2 leftalign"> Connected to the Arty Z7 3.3V Power Rail (See the “Power Supplies” section)                                                                              </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0 leftalign"> <strong>5V0</strong>                          </td><td class="col1 leftalign"> 5.0V Power Rail                        </td><td class="col2 leftalign"> Connected to the Arty Z7 5.0V Power Rail (See the “Power Supplies” section)                                                                              </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0 leftalign"> <strong><abbr title="Ground">GND</abbr></strong>, <strong>G</strong>                   </td><td class="col1 leftalign"> Ground                                 </td><td class="col2 leftalign"> Connected to the Ground plane of Arty Z7                                                                                                                 </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0 leftalign"> <strong>VIN</strong>                          </td><td class="col1 leftalign"> Power Input                            </td><td class="col2 leftalign"> Connected in parallel with the external power supply connector (J18).                                                                                    </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 16.1. Shield Pin Descriptions.</em>
+</p>
+
+</div>
+
+<h3 class="sectionedit45" id="shield_digital_io">16.1 Shield Digital I/O</h3>
+<div class="level3">
+
+<p>
+The pins connected directly to the Zynq PL can be used as general purpose inputs or outputs. These pins include the I2C, SPI, and general purpose I/O pins. There are 200 Ohm series resistors between the FPGA and the digital I/O pins to help provide protection against accidental short circuits (with the exception of the AN5-AN0 signals, which have no series resistors, and the AN6-AN12 signals, which have 100 Ohm series resistors). The absolute maximum and recommended operating voltages for these pins are outlined in the table below.
+</p>
+
+<p>
+IO26-IO41 and A (IO42) are not accessible on the Arty Z7-10. Also, AN0-AN5 cannot be used as Digital I/O on the Arty Z7-10. This is due to fewer number of I/O pins being available on the Zynq-7010 than on the Zynq-7020.    
+</p>
+<div class="table sectionedit46"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign">                         </th><th class="col1 leftalign"> Absolute Minimum Voltage  </th><th class="col2 leftalign"> Recommended Minimum Operating Voltage  </th><th class="col3 leftalign"> Recommended Maximum Operating Voltage  </th><th class="col4 leftalign"> Absolute Maximum Voltage  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0 leftalign"> Powered                 </th><td class="col1 leftalign"> -0.4 V                    </td><td class="col2 leftalign"> -0.2 V                                 </td><td class="col3 leftalign"> 3.4 V                                  </td><td class="col4 leftalign"> 3.75 V                    </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> Unpowered               </th><td class="col1 leftalign"> -0.4 V                    </td><td class="col2 leftalign"> N/A                                    </td><td class="col3 leftalign"> N/A                                    </td><td class="col4 leftalign"> 0.55 V                    </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Table 16.1.1. Shield Digital Voltages.</em>
+</p>
+
+<p>
+For more information on the electrical characteristics of the pins connected to the Zynq PL, please see the <a href="https://docs.xilinx.com/v/u/en-US/ds187-XC7Z010-XC7Z020-Data-Sheet" class="urlextern" target="_tab" title="https://docs.xilinx.com/v/u/en-US/ds187-XC7Z010-XC7Z020-Data-Sheet" rel="ugc nofollow noopener">Zynq-7000 datasheet</a> from Xilinx.
+</p>
+
+</div>
+
+<h3 class="sectionedit47" id="shield_analog_io">16.2 Shield Analog I/O</h3>
+<div class="level3">
+
+<p>
+The pins labeled A0-A11 and V_P/V_N are used as analog inputs to the XADC module of the Zynq. The Zynq expects that the inputs range from 0-1 V. On the pins labeled A0-A5 we use an external circuit to scale down the input voltage from 3.3V. This circuit is shown in Figure 16.2.1. This circuit allows the XADC module to accurately measure any voltage between 0V and 3.3V (relative to the Arty Z7&#039;s <abbr title="Ground">GND</abbr>) that is applied to any of these pins. If you wish to use the pins labeled A0-A5 as Digital inputs or outputs, they are also connected directly to the Zynq PL before the resistor divider circuit (also shown in Figure 16.2.1) on the Arty Z7-20. This additional connection is not made on the Arty Z7-10, which is why these signals can only be used as analog inputs on that variant.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield-an.png" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-shield-an.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield-an.png?w=600&amp;tok=7c8f6c" class="mediacenter" loading="lazy" title="Figure 16.2.1. Single-Ended Analog Inputs" alt="Figure 16.2.1. Single-Ended Analog Inputs" width="600" /></a>
+</p>
+
+<p>
+<em>Figure 16.2.1. Single-Ended Analog Inputs.</em>
+</p>
+
+<p>
+The pins labeled A6-A11 are connected directly to 3 pairs of analog capable pins on the Zynq PL via an anti-aliasing filter. This circuit is shown in Figure 16.2.2. These pairs of pins can be used as differential analog inputs with a voltage difference between 0-1V. The even numbers are connected to the positive pins of the pair and the odd numbers are connected to the negative pins (so A6 and A7 form an analog input pair with A6 being positive and A7 being negative). Note that though the pads for the capacitor are present, they are not loaded for these pins. Since the analog capable pins of the FPGA can also be used like normal digital FPGA pins, it is also possible to use these pins for Digital I/O. 
+</p>
+
+<p>
+The pins labeled V_P and V_N are connected to the VP_0 and VN_0 dedicated analog inputs of the FPGA. This pair of pins can also be used as a differential analog input with voltage between 0-1V, but they cannot be used as Digital I/O. The capacitor in the circuit shown in Figure 16.2.2 for this pair of pins is loaded on the Arty Z7.
+</p>
+
+<p>
+<a href="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield-diff-an.png" class="media" target="_tab " title="reference:programmable-logic:arty-z7:arty-z7-shield-diff-an.png" rel="noopener"><img src="https://digilent.com/reference/_media/reference/programmable-logic/arty-z7/arty-z7-shield-diff-an.png?w=600&amp;tok=63aa21" class="mediacenter" loading="lazy" title="Figure 16.2.2. Differential Analog Inputs" alt="Figure 16.2.2. Differential Analog Inputs" width="600" /></a>
+</p>
+
+<p>
+<em>Figure 16.2.2. Differential Analog Inputs.</em>
+</p>
+
+<p>
+The XADC core within the Zynq is a dual channel 12-bit analog-to-digital converter capable of operating at 1 MSPS. Either channel can be driven by any of the analog inputs connected to the shield pins. The XADC core is controlled and accessed from a user design via the Dynamic Reconfiguration Port (DRP). The DRP also provides access to voltage monitors that are present on each of the FPGA’s power rails, and a temperature sensor that is internal to the FPGA. For more information on using the XADC core, refer to the Xilinx document titled “7 Series FPGAs and Zynq-7000 All Programmable SoC XADC Dual 12-Bit 1 MSPS Analog-to-Digital Converter”. It is also possible to access the XADC core directly using the PS, via the “PS-XADC” interface. This interface is described in full in chapter 30 of the <a href="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" class="urlextern" target="_tab" title="https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM" rel="ugc nofollow noopener">Zynq Technical Reference manual</a>.
+</p>
+
+</div>
+
+<h2 class="sectionedit48" id="hardware_errata">Hardware errata</h2>
+<div class="level2">
+
+<p>
+Although we strive to provide perfect products, we are not infallible. The Arty Z7 is subject to the limitations below.
+</p>
+<div class="table sectionedit49"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Product Name  </th><th class="col1 leftalign"> Variant  </th><th class="col2 leftalign"> Revision  </th><th class="col3 leftalign"> Problem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </th><th class="col4 leftalign"> Status        </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> Arty Z7       </td><td class="col1 leftalign"> All      </td><td class="col2 leftalign"> All       </td><td class="col3 leftalign"> Negative CK-to-DQS delays in the board files are causing critical warnings in Vivado &gt;2017.4:<br/>
+[PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. <br/>
+<br/>
+The negative values are due to CK trace being shorter than any of the four DQS traces.<br/>
+<br/>
+In the early days of Zynq board design negative values where listed as sub-optimal, but not erroneous. Tree topology instead of fly-by was also among the routing recommendations for DDR3 layouts. So the Arty (Z7) was designed with this sub-optimal layout due to space constraints. During Write Leveling calibration, 0 is used as an initial value instead of the negative preset delays. After calibration, if the skew is still too low, the clock is inverted. See ug585 pg 316 for more details. All Arty (Z7)s shipped to customers are functionally tested and pass the DDR3 calibration process. ﻿<br/>
+<br/>
+Xilinx recommendations changed in the mean time, both in terms of routing topology and delay values. A trace of this can be found here: <a href="https://support.xilinx.com/s/article/53039" class="urlextern" target="_tab" title="https://support.xilinx.com/s/article/53039" rel="ugc nofollow noopener">https://support.xilinx.com/s/article/53039</a>. The &gt; 0ns requirement was introduced to be in line with non-Zynq MIG-based designs, where negative delays were never permitted. ﻿<br/>
+<br/>
+To silence the warnings, zero board delays can be set in Processing System configuration. The calibration algorithm seems to be using zero starting values anyway when negative delays are given.  </td><td class="col4 leftalign"> will not fix  </td>
+	</tr>
+</table></div>
+<div class="tags"><span>
+	<a href="https://digilent.com/reference/tag/rm?do=showtag&amp;tag=rm" class="wikilink1" title="tag:rm" rel="tag">rm</a>,
+	<a href="https://digilent.com/reference/tag/doc?do=showtag&amp;tag=doc" class="wikilink1" title="tag:doc" rel="tag">doc</a>,
+	<a href="https://digilent.com/reference/tag/arty-z7?do=showtag&amp;tag=arty-z7" class="wikilink1" title="tag:arty-z7" rel="tag">arty-z7</a>
+</span></div>
+
+</div>
+
+                    <!-- wikipage stop -->
+                    </div>
+
+                    					
+					
+                </div><!-- /content -->
+
+                <!-- ********** ASIDE ********** -->
+                                <aside id="dokuwiki__aside" class="col-sm-3 col-sm-pull-9">
+                                    </aside><!-- /aside -->
+                            </section><!-- /wrapper -->
+
+            <!-- ********** FOOTER ********** -->            
+			
+    </div></div><!-- /site -->
+	<div class="container-fluid footer">
+        <div class="container">
+            <div class="row footer-links">
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/company/">Company</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/company/#about-digilent">About Us</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#faqs">FAQs</a>
+                        </li>  
+                        <li>
+                            <a href="https://digilent.com/shop/distributors/">Distributors</a>
+                        </li> 
+                        <li>
+                            <a href="https://digilent.com/shipping-returns/">Shipping & Returns</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/company/#jobs">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/legal-privacy/">Legal & Privacy</a>
+                        </li>                                             
+                    </ul>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/news/">News</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#newsletter">Newsletter</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/news/#events">Events</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--<div class="footer-info-col col-xs-12 col-sm-6 col-md-2">
+                    <h5 class="footer-info-heading">
+                        <a href="https://digilent.com/affiliations/">Affiliations</a>
+                    </h5>
+                    <ul >
+                        <li>
+                            <a href="https://digilent.com/affiliations/#distributors">List of Distributors</a>
+                        </li>
+                        <li>
+                            <a href="https://digilent.com/affiliations/#partners">Technology Partners</a>
+                        </li>
+                    </ul>
+                </div>-->
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-4">
+                    <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
+                    <p>Get the latest updates on new products and upcoming sales</p>
+
+                    <div class="_form_9"></div><script src="https://ac.digilent.com/f/embed.php?id=9" type="text/javascript" charset="utf-8"></script>
+                </div>
+
+                <div class="footer-info-col col-xs-12 col-sm-6 col-md-2 col-md-offset-1">
+                    <h5 class="footer-info-heading">Contact Us</h5>
+                    <ul id="contact-us-links">
+                    <li>
+                            <a href="https://forum.digilent.com">Technical Support Forum</a>
+                        </li>                        
+                        <li>
+                            <a href="https://digilent.com/support/#channels">Support Channels</a>
+                        </li>
+                    </ul>
+                    <address>
+                        Digilent co NI<br>
+                        attn: PBU Operations<br>
+                        11500 N Mopac Expy,<br>
+                        Austin, TX 78759<br>
+                        United States of America
+                    </address>
+                </div>
+
+                <div class="footer-info-col col-xs-12 social">
+                <div class="col-lg-pull-11 col-md-pull-10 col-sm-pull-10 col-xs-12 copyright">© 2025 Digilent</div>
+                    <ul class="socialLinks">
+
+                        <li class="socialLinks-item">
+                            <a href="http://twitter.com/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="http://facebook.com/Digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.youtube.com/user/DigilentInc" target="_blank" rel="noopener">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://github.com/digilent" target="_blank" rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://instagram.com/digilentinc" target="_blank" rel="noopener">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.linkedin.com/company/1454013" target="_blank" rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a href="https://www.flickr.com/photos/127815101@N07" target="_blank" rel="noopener">
+                                <i class="fa fa-flickr"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+	</div>
+
+    <div class="no"><img src="https://digilent.com/reference/lib/exe/taskrunner.php?id=programmable-logic%3Aarty-z7%3Areference-manual&amp;1778455801" width="2" height="1" alt="" /></div>
+    <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+
+    <script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var jQNew = $.noConflict(true);
+</script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/sorttable.js" type="text/javascript"></script>
+<script src="https://digilent.com/reference/lib/tpl/digilent-tpl/js/script.js" type="text/javascript"></script>
+
+    <!-- Lucky Orange -->
+    <script type='text/javascript'>
+    window.__lo_site_id = 287347;
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+
+</body>
+</html>
+
+
+
